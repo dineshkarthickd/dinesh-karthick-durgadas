@@ -39,6 +39,8 @@ export interface UseModalOptions {
   initialFocusRef?: React.RefObject<HTMLElement | null>;
   returnFocusRef?: React.RefObject<HTMLElement | null>;
   onClose?: () => void;
+  trapTab?: boolean;
+  setInert?: boolean;
 }
 
 export function useModal({
@@ -47,6 +49,8 @@ export function useModal({
   initialFocusRef,
   returnFocusRef,
   onClose,
+  trapTab = true,
+  setInert = true,
 }: UseModalOptions) {
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
   const onCloseRef = useRef(onClose);
@@ -63,7 +67,9 @@ export function useModal({
       document.activeElement instanceof HTMLElement ? document.activeElement : null;
 
     // Mark background as inert
-    setRootInert(true);
+    if (setInert) {
+      setRootInert(true);
+    }
 
     // Focus close button or first focusable control after animation starts
     const focusTimer = requestAnimationFrame(() => {
@@ -117,14 +123,20 @@ export function useModal({
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    if (trapTab) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
 
     const returnFocusEl = returnFocusRef?.current;
 
     return () => {
       cancelAnimationFrame(focusTimer);
-      window.removeEventListener('keydown', handleKeyDown);
-      setRootInert(false);
+      if (trapTab) {
+        window.removeEventListener('keydown', handleKeyDown);
+      }
+      if (setInert) {
+        setRootInert(false);
+      }
 
       // Restore focus on close
       const prev = previousActiveElementRef.current;
@@ -143,5 +155,5 @@ export function useModal({
         }
       }, 0);
     };
-  }, [isOpen, containerRef, initialFocusRef, returnFocusRef]);
+  }, [isOpen, containerRef, initialFocusRef, returnFocusRef, trapTab, setInert]);
 }

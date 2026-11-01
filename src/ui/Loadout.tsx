@@ -65,12 +65,18 @@ export const Loadout: React.FC = () => {
     containerRef: dialogRef,
     initialFocusRef: closeButtonRef,
     onClose: handleClose,
+    setInert: false,
+    trapTab: false,
   });
 
   // Close the wheel on route change
+  const prevPathRef = useRef(location.pathname);
   useEffect(() => {
-    if (loadoutOpen) {
-      setLoadoutOpen(false);
+    if (prevPathRef.current !== location.pathname) {
+      prevPathRef.current = location.pathname;
+      if (loadoutOpen) {
+        setLoadoutOpen(false);
+      }
     }
   }, [location.pathname, loadoutOpen, setLoadoutOpen]);
 

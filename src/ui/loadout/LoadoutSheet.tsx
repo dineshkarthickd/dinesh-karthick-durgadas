@@ -27,7 +27,10 @@ export const LoadoutSheet: React.FC<LoadoutSheetProps> = ({
   onNavCerts,
 }) => {
   return (
-    <div className="flex-1 overflow-y-auto px-[var(--m-gutter)] py-3 space-y-2">
+    <div
+      className="flex-1 overflow-y-auto px-[var(--m-gutter)] py-3 space-y-2"
+      style={{ scrollbarWidth: 'none' }}
+    >
       {skills.map((skill, idx) => {
         const isExpanded = expandedIndex === idx;
         const isEquipped = equippedTree === skill.tree;

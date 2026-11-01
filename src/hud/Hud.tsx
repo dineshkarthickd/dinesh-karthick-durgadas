@@ -147,7 +147,7 @@ export const Hud: React.FC = () => {
             />
             <span className="text-white/30 text-xs">·</span>
             <Stars size={14} gap="gap-1" />
-            {equipped && (
+            {equipped ? (
               <div className="flex items-center gap-1.5 ml-1 px-2 py-0.5 rounded bg-[#38d6ff]/15 border border-[#38d6ff]/40 text-[#38d6ff] font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider backdrop-blur-sm">
                 <button
                   type="button"
@@ -172,6 +172,16 @@ export const Hud: React.FC = () => {
                   ✕
                 </button>
               </div>
+            ) : (
+              <button
+                type="button"
+                onClick={handleOpenLoadout}
+                className="flex items-center gap-1 ml-1 px-2 py-0.5 rounded bg-white/5 border border-white/20 text-[#b9b4ab] hover:text-white hover:border-[#ff2e88] font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider backdrop-blur-sm cursor-pointer transition-colors"
+                title="Open Tech Stack Loadout (TAB)"
+              >
+                <Crosshair size={12} />
+                <span>LOADOUT</span>
+              </button>
             )}
           </div>
 

@@ -180,27 +180,42 @@ body {
   background: linear-gradient(180deg, rgba(7,6,10,0.75) 0%, rgba(7,6,10,0) 12%);
 }
 
-/* Custom scrollbars */
-::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
-}
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.4);
-}
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.35);
+/* Custom scrollbars on desktop landscape only */
+@media (min-width: 1024px) and (orientation: landscape) {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .scrollbar-magenta::-webkit-scrollbar-thumb {
+    background: var(--magenta);
+  }
+  .scrollbar-magenta::-webkit-scrollbar-track {
+    background: rgba(10, 10, 14, 0.8);
+  }
 }
 
-.scrollbar-magenta::-webkit-scrollbar-thumb {
-  background: var(--magenta);
-}
-.scrollbar-magenta::-webkit-scrollbar-track {
-  background: rgba(10, 10, 14, 0.8);
+/* On mobile view and tab (portrait tablet) view: no scrollbars anywhere */
+@media not all and (min-width: 1024px) and (orientation: landscape) {
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
 }
 
 /* Desktop content panel: scrolls only when it must, without a visible scrollbar;

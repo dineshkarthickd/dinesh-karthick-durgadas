@@ -85,8 +85,7 @@ export const StackedLayout: React.FC<StackedLayoutProps> = ({
         className="flex-1 overflow-y-auto overscroll-contain"
         style={{
           scrollBehavior: 'smooth',
-          scrollbarWidth: 'thin',
-          scrollbarColor: `${accentColor} transparent`,
+          scrollbarWidth: 'none',
         }}
       >
         {/* PARALLAX ART BAND */}

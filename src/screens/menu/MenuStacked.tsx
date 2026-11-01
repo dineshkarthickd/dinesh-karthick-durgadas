@@ -92,8 +92,7 @@ export const MenuStacked: React.FC<MenuStackedProps> = ({
           paddingRight: 'var(--m-gutter)',
           paddingTop: '6px',
           paddingBottom: 'calc(24px + env(safe-area-inset-bottom, 0px))',
-          scrollbarWidth: 'thin',
-          scrollbarColor: '#ff2e88 transparent',
+          scrollbarWidth: 'none',
         }}
       >
         <nav

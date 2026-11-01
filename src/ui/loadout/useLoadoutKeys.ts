@@ -33,6 +33,30 @@ export function useLoadoutKeys({
         playBackSound();
         onClose();
       },
+      Tab: (e) => {
+        e.preventDefault();
+        haptic(10);
+        playBackSound();
+        onClose();
+      },
+      q: (e) => {
+        e.preventDefault();
+        haptic(10);
+        playBackSound();
+        onClose();
+      },
+      Q: (e) => {
+        e.preventDefault();
+        haptic(10);
+        playBackSound();
+        onClose();
+      },
+      KeyQ: (e) => {
+        e.preventDefault();
+        haptic(10);
+        playBackSound();
+        onClose();
+      },
       ArrowRight: (e) => {
         e.preventDefault();
         playMoveSound();
