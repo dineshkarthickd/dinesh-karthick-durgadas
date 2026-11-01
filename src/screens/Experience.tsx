@@ -42,13 +42,13 @@ export const Experience: React.FC = () => {
               </div>
 
               {/* Role & Company */}
-              <h2 className="font-['Barlow_Condensed'] font-bold text-xl sm:text-2xl lg:text-[18px] text-white uppercase tracking-wide mt-1">
+              <h2 className="font-['Barlow_Condensed'] font-bold text-[16px] sm:text-[18px] lg:text-[18px] text-white uppercase tracking-wide mt-1">
                 {item.role}{' '}
                 <span className="text-[#8b7bff] font-normal">@ {item.company}</span>
               </h2>
 
               {/* Bullet Points */}
-              <ul className="mt-2 space-y-1.5 font-['Inter'] text-xs sm:text-[14px] lg:text-[13.5px] text-[#f2efe9]/85 leading-snug list-disc list-inside marker:text-[#8b7bff]">
+              <ul className="mt-2 space-y-1.5 font-['Inter'] text-[var(--m-card-text)] lg:text-[13.5px] text-[#f2efe9]/85 leading-snug list-disc list-inside marker:text-[#8b7bff]">
                 {item.points.map((pt, idx) => (
                   <li key={idx} className="pl-1">
                     {pt}
@@ -62,10 +62,10 @@ export const Experience: React.FC = () => {
 
       {/* Dinesh's Own Words Quote Block */}
       <div
-        className="mt-2.5 p-3.5 sm:p-4 lg:py-2.5 lg:px-3.5 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10"
+        className="mt-2.5 p-[var(--m-card-pad)] lg:py-2.5 lg:px-3.5 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10"
         style={{ borderLeft: `4px solid ${ACCENT}` }}
       >
-        <p className="font-['Inter'] italic text-xs sm:text-[13px] lg:text-[12.5px] text-[#b9b4ab] leading-relaxed">
+        <p className="font-['Inter'] italic text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] leading-relaxed">
           "{ownWords}"
         </p>
       </div>

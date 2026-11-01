@@ -34,7 +34,7 @@ export const About: React.FC = () => {
       sectionId="about"
     >
       {/* Bio Paragraph */}
-      <p className="font-['Inter'] text-[15.5px] leading-[1.65] sm:text-[17px] sm:leading-relaxed lg:text-[15px] lg:leading-[1.55] text-[#f2efe9]/90 max-w-[60ch]">
+      <p className="font-['Inter'] text-[var(--m-body)] leading-[var(--m-lh-body)] lg:text-[15px] lg:leading-[1.55] text-[#f2efe9]/90 max-w-[60ch]">
         {profile.bio}
       </p>
 
@@ -52,7 +52,7 @@ export const About: React.FC = () => {
 
         {/* 4th Quest Card: dashed orange border, pulsing dot */}
         <div
-          className="relative flex items-center gap-3.5 p-4 lg:py-3.5 lg:px-4 rounded-lg bg-[rgba(10,10,14,0.72)] backdrop-blur-md border-2 border-dashed border-[#ff8a3d]/80 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all hover:translate-x-1 sm:col-span-2 lg:col-span-1"
+          className="relative flex items-center gap-3.5 p-[var(--m-card-pad)] lg:py-3.5 lg:px-4 rounded-lg bg-[rgba(10,10,14,0.72)] backdrop-blur-md border-2 border-dashed border-[#ff8a3d]/80 shadow-[0_4px_20px_rgba(0,0,0,0.4)] transition-all hover:translate-x-1 sm:col-span-2 lg:col-span-1"
         >
           <div className="relative w-3.5 h-3.5 shrink-0 flex items-center justify-center">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ff8a3d] opacity-75" />
@@ -60,10 +60,10 @@ export const About: React.FC = () => {
           </div>
 
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs sm:text-[15px] lg:text-[13px] uppercase tracking-wider text-[#ff8a3d]">
+            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[13px] uppercase tracking-wider text-[#ff8a3d]">
               CURRENT QUEST
             </span>
-            <span className="font-['Inter'] text-xs sm:text-[15px] lg:text-[14px] text-[#f2efe9] mt-0.5 leading-snug">
+            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[14px] text-[#f2efe9] mt-0.5 leading-snug">
               {profile.currentQuest} · <span className="text-[#b9b4ab]">In progress</span>
             </span>
           </div>

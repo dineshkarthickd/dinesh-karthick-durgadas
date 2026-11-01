@@ -126,7 +126,7 @@ export const Projects: React.FC = () => {
               <div
                 key={project.id}
                 onClick={() => handleOpenProject(project)}
-                className={`p-4 rounded-xl border bg-[#0a0a0e]/85 backdrop-blur-md flex flex-col justify-between transition-all duration-200 cursor-pointer ${
+                className={`p-[var(--m-card-pad)] lg:p-4 rounded-xl border bg-[#0a0a0e]/85 backdrop-blur-md flex flex-col justify-between transition-all duration-200 cursor-pointer ${
                   isMatch
                     ? 'border-white/10 hover:border-[#2ee6c5] hover:shadow-[0_0_20px_rgba(46,230,197,0.3)]'
                     : 'opacity-35 grayscale border-white/5 hover:opacity-75'
@@ -144,11 +144,11 @@ export const Projects: React.FC = () => {
                     )}
                   </div>
 
-                  <h3 className="font-['Anton'] text-xl uppercase tracking-wider text-white mt-1">
+                  <h3 className="font-['Anton'] text-[17px] sm:text-xl lg:text-xl uppercase tracking-wider text-white mt-1">
                     {project.name}
                   </h3>
 
-                  <p className="font-['Inter'] text-xs text-[#b9b4ab] mt-1 line-clamp-2">
+                  <p className="font-['Inter'] text-[var(--m-card-text)] text-[#b9b4ab] mt-1 line-clamp-2">
                     {project.oneLiner}
                   </p>
                 </div>

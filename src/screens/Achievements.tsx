@@ -118,10 +118,10 @@ export const Achievements: React.FC = () => {
         <div className="sticky top-0 bg-[#07060a] z-10 -mt-1 pt-1 pb-2 pr-3 flex flex-col gap-2 border-b border-white/10">
           {/* Header Counter Line */}
           <div className="flex flex-wrap items-center justify-between gap-2 pr-1">
-            <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-base uppercase tracking-wider text-white whitespace-nowrap">
+            <span className="font-['Barlow_Condensed'] font-bold text-xs lg:text-sm uppercase tracking-wider text-white whitespace-nowrap">
               {certificates.length} TROPHIES UNLOCKED
             </span>
-            <div className="flex items-center gap-2.5 sm:gap-3 font-['Barlow_Condensed'] font-bold text-xs sm:text-sm text-[#b9b4ab] whitespace-nowrap shrink-0">
+            <div className="flex items-center gap-2.5 sm:gap-3 font-['Barlow_Condensed'] font-bold text-xs lg:text-sm text-[#b9b4ab] whitespace-nowrap shrink-0">
               <span className="flex items-center gap-1 text-[#ffc23d]">🥇 {goldCount}</span>
               <span>·</span>
               <span className="flex items-center gap-1 text-[#c9d1d9]">🥈 {silverCount}</span>
@@ -146,7 +146,7 @@ export const Achievements: React.FC = () => {
                         setActiveTab(tab);
                       }
                     }}
-                    className={`px-3 py-1 rounded font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider transition-all cursor-pointer ${
+                    className={`px-3 h-[30px] flex items-center justify-center rounded font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider transition-all cursor-pointer ${
                       isActive
                         ? 'bg-[#e64bff] text-white shadow-[0_2px_10px_rgba(230,75,255,0.4)]'
                         : 'bg-white/5 text-[#b9b4ab] hover:bg-white/10 hover:text-white'
@@ -184,7 +184,7 @@ export const Achievements: React.FC = () => {
             return (
               <div
                 key={cert.preview}
-                className={`p-3 sm:p-3.5 rounded-lg border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
+                className={`p-[var(--m-card-pad)] rounded-lg border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
                   isMatch
                     ? 'bg-[#38d6ff]/10 border-[#38d6ff]/40 shadow-[0_0_15px_rgba(56,214,255,0.15)]'
                     : 'bg-[#0a0a0e]/90 border-white/10 hover:border-white/20'
@@ -193,7 +193,7 @@ export const Achievements: React.FC = () => {
                 {/* Left: Icon + Info */}
                 <div className="flex items-start gap-3 min-w-0">
                   <div
-                    className="w-8 h-8 rounded flex items-center justify-center shrink-0 text-base shadow"
+                    className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-8 lg:h-8 rounded flex items-center justify-center shrink-0 text-base shadow [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
                     style={{ backgroundColor: tierInfo.bg, color: tierInfo.text }}
                   >
                     <Trophy size={16} />
@@ -201,12 +201,12 @@ export const Achievements: React.FC = () => {
 
                   <div className="flex flex-col min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-base uppercase tracking-wide text-white truncate">
+                      <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-base uppercase tracking-wide text-white truncate">
                         {cert.title}
                       </span>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-1.5 text-xs text-[#b9b4ab] mt-0.5 font-['Inter']">
+                    <div className="flex flex-wrap items-center gap-1.5 text-[var(--m-card-text)] text-[#b9b4ab] mt-0.5 font-['Inter']">
                       <span>{cert.issuer}</span>
                       <span className="text-white/20">·</span>
                       <span className="font-mono text-[11px] text-neutral-300">{cert.date}</span>

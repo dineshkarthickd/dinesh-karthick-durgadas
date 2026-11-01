@@ -46,20 +46,20 @@ export const Contact: React.FC = () => {
         {/* EMAIL */}
         <a
           href={`mailto:${contact.email}`}
-          className="p-3 sm:p-3.5 lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
-            className="w-9 h-9 lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md"
+            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
             style={{ backgroundColor: ACCENT }}
           >
             <Mail size={16} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
               EMAIL
             </span>
-            <span className="font-['Inter'] text-xs lg:text-[12.5px] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               {contact.email}
             </span>
           </div>
@@ -70,20 +70,20 @@ export const Contact: React.FC = () => {
           href={contact.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 sm:p-3.5 lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
-            className="w-9 h-9 lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md"
+            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
             style={{ backgroundColor: ACCENT }}
           >
             <MessageCircle size={16} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
               WHATSAPP
             </span>
-            <span className="font-['Inter'] text-xs lg:text-[12.5px] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               Chat on WhatsApp
             </span>
           </div>
@@ -92,20 +92,20 @@ export const Contact: React.FC = () => {
         {/* CALL (Label: Call me, DO NOT print phone number) */}
         <a
           href={contact.phoneTel}
-          className="p-3 sm:p-3.5 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-3 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
-            className="w-9 h-9 rounded flex items-center justify-center shrink-0 text-black shadow-md"
+            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
             style={{ backgroundColor: ACCENT }}
           >
             <Phone size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
               CALL
             </span>
-            <span className="font-['Inter'] text-xs text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               Call me
             </span>
           </div>
@@ -116,20 +116,20 @@ export const Contact: React.FC = () => {
           href={contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 sm:p-3.5 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-3 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
-            className="w-9 h-9 rounded flex items-center justify-center shrink-0 text-black shadow-md"
+            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
             style={{ backgroundColor: ACCENT }}
           >
             <LinkedinIcon size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
               LINKEDIN
             </span>
-            <span className="font-['Inter'] text-xs text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               dinesh-karthick-durgadas
             </span>
           </div>
@@ -140,20 +140,20 @@ export const Contact: React.FC = () => {
           href={contact.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 sm:p-3.5 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-3 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
-            className="w-9 h-9 rounded flex items-center justify-center shrink-0 text-black shadow-md"
+            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
             style={{ backgroundColor: ACCENT }}
           >
             <GithubIcon size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
               GITHUB
             </span>
-            <span className="font-['Inter'] text-xs text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               dineshkarthickd
             </span>
           </div>
@@ -164,20 +164,20 @@ export const Contact: React.FC = () => {
           href={contact.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3 sm:p-3.5 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-3 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
-            className="w-9 h-9 rounded flex items-center justify-center shrink-0 text-black shadow-md"
+            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
             style={{ backgroundColor: ACCENT }}
           >
             <InstagramIcon size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
               INSTAGRAM
             </span>
-            <span className="font-['Inter'] text-xs text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               @dinesh.durgadas
             </span>
           </div>
@@ -185,20 +185,20 @@ export const Contact: React.FC = () => {
 
         {/* LOCATION (not a link) */}
         <div
-          className="p-3 sm:p-3.5 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 flex items-center gap-3 sm:col-span-2"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 flex items-center gap-2.5 sm:col-span-2"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
-            className="w-9 h-9 rounded flex items-center justify-center shrink-0 text-black shadow-md"
+            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
             style={{ backgroundColor: ACCENT }}
           >
             <MapPin size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
               LOCATION
             </span>
-            <span className="font-['Inter'] text-xs text-[#b9b4ab]">
+            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words">
               {contact.location}
             </span>
           </div>
