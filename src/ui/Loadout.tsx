@@ -43,15 +43,16 @@ export const Loadout: React.FC = () => {
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  // Sync selection whenever loadout opens or equipped tree changes
-  useEffect(() => {
+  const [prevLoadoutOpen, setPrevLoadoutOpen] = useState(loadoutOpen);
+  if (loadoutOpen !== prevLoadoutOpen) {
+    setPrevLoadoutOpen(loadoutOpen);
     if (loadoutOpen) {
       const tree = equipped || activeLoadoutSelectionRef.current || skills[0]?.tree || 'Frontend';
       setLoadoutSelectedTreeState(tree);
       const idx = skills.findIndex((s) => s.tree === tree);
       setMobileExpandedIndex(idx >= 0 ? idx : 0);
     }
-  }, [loadoutOpen, equipped]);
+  }
 
   const handleClose = useCallback(() => {
     haptic(10);
