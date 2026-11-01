@@ -43,6 +43,16 @@ export const Loadout: React.FC = () => {
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
 
+  // Sync selection whenever loadout opens or equipped tree changes
+  useEffect(() => {
+    if (loadoutOpen) {
+      const tree = equipped || activeLoadoutSelectionRef.current || skills[0]?.tree || 'Frontend';
+      setLoadoutSelectedTreeState(tree);
+      const idx = skills.findIndex((s) => s.tree === tree);
+      setMobileExpandedIndex(idx >= 0 ? idx : 0);
+    }
+  }, [loadoutOpen, equipped]);
+
   const handleClose = useCallback(() => {
     haptic(10);
     playBackSound();
@@ -141,10 +151,15 @@ export const Loadout: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md cursor-pointer"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              handleClose();
+            }
+          }}
         >
           {/* Top Bar with SFX & Close */}
-          <div className="absolute top-4 right-4 z-20 flex items-center gap-3">
+          <div className="absolute top-4 right-4 z-20 flex items-center gap-3 pointer-events-auto">
             <button
               type="button"
               onClick={toggleSfx}
@@ -171,7 +186,10 @@ export const Loadout: React.FC = () => {
           </div>
 
           {/* Desktop Wheel View */}
-          <div className="hidden lg:flex items-center justify-center">
+          <div
+            className="hidden lg:flex items-center justify-center cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
             <LoadoutWheel
               radius={radius}
               selectedIndex={selectedIndex}
@@ -189,7 +207,10 @@ export const Loadout: React.FC = () => {
           </div>
 
           {/* Mobile Bottom Sheet View */}
-          <div className="lg:hidden fixed inset-x-0 bottom-0 top-16 bg-[#07060a] border-t border-white/15 rounded-t-2xl flex flex-col overflow-hidden">
+          <div
+            className="lg:hidden fixed inset-x-0 bottom-0 top-16 bg-[#07060a] border-t border-white/15 rounded-t-2xl flex flex-col overflow-hidden cursor-default"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="p-4 border-b border-white/10 flex items-center justify-between">
               <div>
                 <h2 className="font-['Anton'] text-2xl uppercase tracking-wider text-white">
@@ -199,14 +220,27 @@ export const Loadout: React.FC = () => {
                   Equip a tree to filter projects & certificates
                 </p>
               </div>
+
+              <button
+                type="button"
+                onClick={handleClose}
+                className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-[#ff2e88] text-white hover:border-[#ff2e88] transition-colors cursor-pointer shrink-0"
+                title="Close Loadout"
+                aria-label="Close loadout"
+              >
+                <X size={18} />
+              </button>
             </div>
 
             <LoadoutSheet
               selectedIndex={selectedIndex}
               expandedIndex={mobileExpandedIndex}
-              onToggleExpand={(idx) =>
-                setMobileExpandedIndex(mobileExpandedIndex === idx ? null : idx)
-              }
+              onToggleExpand={(idx) => {
+                setMobileExpandedIndex(mobileExpandedIndex === idx ? null : idx);
+                if (idx >= 0 && idx < skills.length) {
+                  setLoadoutSelectedTree(skills[idx].tree);
+                }
+              }}
               onEquipIndex={(idx) => {
                 handleEquipIndex(idx);
                 setLoadoutOpen(false);
@@ -225,3 +259,5 @@ export const Loadout: React.FC = () => {
   if (typeof document === 'undefined') return null;
   return createPortal(modalContent, document.body);
 };
+
+export default Loadout;

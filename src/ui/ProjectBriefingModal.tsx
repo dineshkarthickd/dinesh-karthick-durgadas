@@ -49,7 +49,7 @@ export const ProjectBriefingModal: React.FC<ProjectBriefingModalProps> = ({
     <AnimatePresence>
       {project && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md select-none"
+          className="fixed inset-0 z-50 flex items-center justify-center p-[var(--m-gutter)] lg:p-6 bg-black/80 backdrop-blur-md select-none"
           onClick={onClose}
         >
           <motion.div

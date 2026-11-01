@@ -40,8 +40,8 @@ export const MissionComplete: React.FC = () => {
       accentColor={ACCENT}
     >
       {/* Stats Card */}
-      <div className="p-4 sm:p-5 lg:py-3 lg:px-4 rounded-lg bg-[rgba(10,10,14,0.85)] backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)] my-1">
-        <h2 className="font-['Barlow_Condensed'] font-bold text-sm lg:text-xs uppercase tracking-wider text-white border-b border-white/10 pb-2 mb-2.5">
+      <div className="p-[var(--m-card-pad)] lg:py-3 lg:px-4 rounded-lg bg-[rgba(10,10,14,0.85)] backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)] my-1">
+        <h2 className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-xs uppercase tracking-wider text-white border-b border-white/10 pb-2 mb-2.5">
           MISSION DEBRIEF & CAREER STATS
         </h2>
 
