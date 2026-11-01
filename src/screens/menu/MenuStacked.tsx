@@ -16,10 +16,10 @@ interface MenuStackedProps {
 
 export const MenuStacked: React.FC<MenuStackedProps> = ({
   items,
-  selectedIndex,
+  selectedIndex: _selectedIndex,
   transitioningIndex,
   visited,
-  onHighlight,
+  onHighlight: _onHighlight,
   onSelect,
   buttonRefs,
 }) => {
@@ -101,11 +101,10 @@ export const MenuStacked: React.FC<MenuStackedProps> = ({
           style={{ maxWidth: 'var(--m-content-max)' }}
         >
           {items.map((item, index) => {
-            const isSelected = selectedIndex === index;
             const isTransitioning = transitioningIndex === index;
             const isVisited = item.sectionId ? visited.has(item.sectionId) : false;
             const ItemIcon = item.icon;
-            const barBgColor = isTransitioning ? item.accent : '#ff2e88';
+            const barBgColor = item.accent || '#ff2e88';
 
             return (
               <button
@@ -114,16 +113,12 @@ export const MenuStacked: React.FC<MenuStackedProps> = ({
                 ref={(el) => {
                   buttonRefs.current[index] = el;
                 }}
-                onFocus={() => {
-                  if (selectedIndex !== index) onHighlight(index);
-                }}
-                onMouseEnter={() => onHighlight(index)}
                 onClick={() => onSelect(index)}
-                className={`group flex items-center justify-between px-3 transition-colors cursor-pointer h-[44px] text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
-                  isSelected ? 'text-white' : 'text-white/90 active:bg-white/5'
+                className={`group flex items-center justify-between px-3 transition-colors cursor-pointer h-[44px] text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 active:bg-white/10 ${
+                  isTransitioning ? 'text-white' : 'text-white/90'
                 }`}
                 style={{
-                  backgroundColor: isSelected ? barBgColor : undefined,
+                  backgroundColor: isTransitioning ? barBgColor : undefined,
                   transition: 'background-color 150ms ease',
                 }}
               >
@@ -131,14 +126,14 @@ export const MenuStacked: React.FC<MenuStackedProps> = ({
                 <div className="flex items-center gap-3 min-w-0">
                   <div
                     className={`w-7 h-7 rounded flex items-center justify-center shrink-0 shadow-sm ${
-                      isSelected ? 'bg-black text-[#ff2e88]' : 'bg-[#0a0a0e] border'
+                      isTransitioning ? 'bg-black text-white' : 'bg-[#0a0a0e] border'
                     }`}
-                    style={{ borderColor: isSelected ? undefined : item.accent }}
+                    style={{ borderColor: isTransitioning ? undefined : item.accent }}
                   >
                     <ItemIcon
                       size={16}
-                      className={isSelected ? 'text-[#ff2e88]' : undefined}
-                      style={{ color: isSelected ? undefined : item.accent }}
+                      className={isTransitioning ? 'text-white' : undefined}
+                      style={{ color: isTransitioning ? undefined : item.accent }}
                     />
                   </div>
 

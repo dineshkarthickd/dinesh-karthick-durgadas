@@ -210,7 +210,7 @@ export const CertificateViewer: React.FC<CertificateViewerProps> = ({
         )}
       </AnimatePresence>
 
-      {/* GTA Announcement Stage 1 Banner on entry */}
+      {/* Trophy Announcement Stage 1 Banner on entry */}
       <AnnouncementBanner
         tier={currentCert.tier}
         prefersReduced={Boolean(prefersReduced)}

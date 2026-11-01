@@ -232,7 +232,7 @@ export const Hud: React.FC = () => {
           ) : (
             <div className="flex items-center gap-1.5 text-xs font-['Barlow_Condensed'] font-bold tracking-wider text-white">
               <span className="w-2 h-2 rounded-full bg-[#ff2e88] animate-ping" />
-              <span className="text-[#ff2e88] tracking-widest uppercase">GTA: VICE PORTFOLIO</span>
+              <span className="text-[#ff2e88] tracking-widest uppercase">PORTFOLIO</span>
             </div>
           )}
 

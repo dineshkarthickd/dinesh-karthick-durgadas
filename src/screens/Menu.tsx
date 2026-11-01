@@ -19,23 +19,19 @@ export const Menu: React.FC = () => {
 
   const MENU_ITEMS = useMemo(() => buildMenuItems(), []);
 
-  const [selectedIndex, setSelectedIndex] = useState<number>(() => {
-    try {
-      const saved = sessionStorage.getItem('dk_last_menu_index');
-      if (saved !== null) {
-        const parsed = parseInt(saved, 10);
-        if (!isNaN(parsed) && parsed >= 0 && parsed < MENU_ITEMS.length) {
-          return parsed;
-        }
-      }
-    } catch {
-      // ignore
-    }
-    return 0;
-  });
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   const [transitioningIndex, setTransitioningIndex] = useState<number | null>(null);
   const [menuLeaving, setMenuLeaving] = useState<boolean>(false);
+
+  // Clear any legacy saved index
+  useEffect(() => {
+    try {
+      sessionStorage.removeItem('dk_last_menu_index');
+    } catch {
+      // ignore
+    }
+  }, []);
 
   const leaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const navTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -62,12 +58,6 @@ export const Menu: React.FC = () => {
     setTransitioningIndex(index);
     haptic(10);
     playSelectSound();
-
-    try {
-      sessionStorage.setItem('dk_last_menu_index', String(index));
-    } catch {
-      // ignore
-    }
 
     if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
     if (navTimerRef.current) clearTimeout(navTimerRef.current);
