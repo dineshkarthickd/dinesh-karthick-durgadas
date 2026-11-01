@@ -244,7 +244,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
           <h3 className="font-['Barlow_Condensed'] font-bold text-sm sm:text-base uppercase tracking-wide text-white truncate">
             {currentCert.title}
           </h3>
-          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-1.5 font-['Inter'] text-xs sm:text-[13px] text-[#b9b4ab] mt-0.5">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-1.5 font-['Inter'] text-[12.5px] text-[#b9b4ab] mt-0.5">
             <span>{currentCert.issuer}</span>
             <span className="hidden sm:inline text-white/30">·</span>
             <span className="whitespace-nowrap font-mono text-[11px] sm:text-xs text-neutral-300">

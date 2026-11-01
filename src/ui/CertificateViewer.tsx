@@ -188,7 +188,7 @@ export const CertificateViewer: React.FC<CertificateViewerProps> = ({
 
   return createPortal(
     <div
-      className="cert-viewer fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-6 lg:p-8 select-none"
+      className="cert-viewer fixed inset-0 z-[100] flex items-center justify-center p-[var(--m-gutter)] lg:p-8 select-none"
       style={{
         backgroundColor: 'rgba(7, 6, 10, 0.78)',
         backdropFilter: 'blur(8px)',

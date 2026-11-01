@@ -27,7 +27,7 @@ export const LoadoutSheet: React.FC<LoadoutSheetProps> = ({
   onNavCerts,
 }) => {
   return (
-    <div className="flex-1 overflow-y-auto px-4 py-3 space-y-2">
+    <div className="flex-1 overflow-y-auto px-[var(--m-gutter)] py-3 space-y-2">
       {skills.map((skill, idx) => {
         const isExpanded = expandedIndex === idx;
         const isEquipped = equippedTree === skill.tree;
@@ -72,7 +72,7 @@ export const LoadoutSheet: React.FC<LoadoutSheetProps> = ({
                       </span>
                     )}
                   </div>
-                  <div className="font-['Barlow_Condensed'] text-xs text-[#5fd068]">
+                  <div className="font-['Barlow_Condensed'] text-[12.5px] text-[#5fd068]">
                     PROFICIENCY: {skill.level}%
                   </div>
                 </div>
