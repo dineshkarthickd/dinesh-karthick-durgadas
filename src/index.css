@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vice-pink: #ff2e88;
+  --color-vice-cyan: #38d6ff;
+  --color-vice-teal: #2ee6c5;
+  --color-vice-orange: #ff8a3d;
+  --color-vice-violet: #8b7bff;
+  --color-vice-magenta: #e64bff;
+  --color-vice-red: #ff4d5e;
+  --color-vice-blue: #3d8bff;
+  --color-gold: #ffc23d;
+  --color-hud-green: #5fd068;
+  --color-dim: #b9b4ab;
+}
+
+/* Desktop "game screen" layout only on wide LANDSCAPE screens.
+   Portrait tablets (incl. iPad Pro 1024×1366) use the stacked mobile layout. */
+@custom-variant lg (@media (min-width: 1024px) and (orientation: landscape));
+
+:root {
+  --bg: #07060a;
+  --panel: rgba(10, 10, 14, 0.72);
+  --panel-border: rgba(255, 255, 255, 0.08);
+  --text: #f2efe9;
+  --muted: #b9b4ab;
+  --hud-green: #5fd068;
+  --hud-white: #ffffff;
+  --pink: #ff2e88;
+  --orange: #ff8a3d;
+  --cyan: #38d6ff;
+  --teal: #2ee6c5;
+  --violet: #8b7bff;
+  --magenta: #e64bff;
+  --red: #ff4d5e;
+  --blue: #3d8bff;
+  --gold: #ffc23d;
+
+  /* Safe frame spacing tokens */
+  --gutter-x: clamp(24px, 7vw, 144px);
+  --gutter-y: clamp(24px, 7vh, 88px);
+  --frame-max: 1680px;
+  /* left/right inset of the frame on very wide screens */
+  --frame-x: max(var(--gutter-x), calc((100vw - var(--frame-max)) / 2 + var(--gutter-x)));
+
+  /* Art band height for stacked layout */
+  --art-band-height: clamp(220px, 36dvh, 320px);
+
+  /* Mobile & tablet stacked layout tokens (phone < 640px) */
+  --m-gutter: clamp(28px, 8vw, 36px);
+  --m-content-max: 100%;
+  --m-art-band: clamp(180px, 30dvh, 250px);
+  --m-title: 38px;
+  --m-script: 20px;
+  --m-pretitle: 10px;
+  --m-body: 14px;
+  --m-lh-body: 1.6;
+  --m-card-title: 11.5px;
+  --m-card-text: 12.5px;
+  --m-card-pad: 12px 14px;
+  --m-card-icon-box: 32px;
+  --m-card-icon-glyph: 16px;
+  --m-gap: 10px;
+  --m-btn-h: 40px;
+  --m-btn-text: 13px;
+
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --art-band-height: clamp(320px, 42dvh, 480px);
+
+    /* Tablet portrait (>= 640px) tokens */
+    --m-gutter: clamp(48px, 8vw, 72px);
+    --m-content-max: 560px;
+    --m-art-band: clamp(260px, 34dvh, 360px);
+    --m-title: 52px;
+    --m-script: 28px;
+    --m-pretitle: 11px;
+    --m-body: 15px;
+    --m-lh-body: 1.6;
+    --m-card-title: 13px;
+    --m-card-text: 13.5px;
+    --m-card-pad: 14px 16px;
+    --m-card-icon-box: 36px;
+    --m-card-icon-glyph: 18px;
+    --m-gap: 12px;
+    --m-btn-h: 44px;
+    --m-btn-text: 14px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  :root {
+    --fs-title: clamp(44px, 7.5vh, 84px);
+    --fs-subtitle: clamp(22px, 3.8vh, 40px);
+    --content-width: min(34vw, 540px);
+    --gap-blocks: clamp(6px, 1.1vh, 12px);
+    --fs-body: 15px;
+    --lh-body: 1.55;
+    --fs-card-title: 16px;
+    --pad-card: 14px 16px;
+  }
+}
+
+@theme {
+  --font-anton: "Anton", sans-serif;
+  --font-script: "Yellowtail", cursive;
+  --font-barlow: "Barlow Condensed", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+  --color-bg: #07060a;
+  --color-panel: rgba(10, 10, 14, 0.72);
+  --color-panel-border: rgba(255, 255, 255, 0.08);
+  --color-hud-green: #5fd068;
+  --color-hud-white: #ffffff;
+  --color-pink: #ff2e88;
+  --color-orange: #ff8a3d;
+  --color-cyan: #38d6ff;
+  --color-teal: #2ee6c5;
+  --color-violet: #8b7bff;
+  --color-magenta: #e64bff;
+  --color-red: #ff4d5e;
+  --color-blue: #3d8bff;
+  --color-gold: #ffc23d;
+  --color-muted: #b9b4ab;
+  --color-text: #f2efe9;
+}
+
+/* Base styles */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keyboard focus style requirement: pink outline */
+:focus-visible {
+  outline: 2px solid var(--pink) !important;
+  outline-offset: 2px !important;
+}
+
+/* Film grain effect */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 45;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Subtle Vignette */
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 40;
+  background: radial-gradient(circle at center, transparent 45%, rgba(0, 0, 0, 0.65) 100%);
+}
+
+/* Left-side dark gradient overlay for desktop */
+.left-gradient-overlay {
+  background: linear-gradient(90deg, rgba(7,6,10,0.88) 0%, rgba(7,6,10,0.68) 38%, rgba(7,6,10,0.2) 65%, rgba(7,6,10,0) 80%);
+}
+
+/* Strengthened top shade for desktop HUD readability without covering face */
+.top-shade {
+  background: linear-gradient(180deg, rgba(7,6,10,0.75) 0%, rgba(7,6,10,0) 12%);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.scrollbar-magenta::-webkit-scrollbar-thumb {
+  background: var(--magenta);
+}
+.scrollbar-magenta::-webkit-scrollbar-track {
+  background: rgba(10, 10, 14, 0.8);
+}
+
+/* Desktop content panel: scrolls only when it must, without a visible scrollbar;
+   a soft fade at the bottom edge hints that there is more to scroll. */
+@media (min-width: 1024px) and (orientation: landscape) {
+  .panel-scroll {
+    scrollbar-width: none;
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 28px), transparent);
+  }
+  .panel-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Top fade mask for stacked layout so content fades softly under title */
+.scroll-mask-top {
+  mask-image: linear-gradient(to bottom, transparent 0px, #000 16px, #000 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, #000 16px, #000 100%);
+}
+
+/* Parallelogram button skew helper */
+.skew-btn {
+  transform: skewX(-6deg);
+}
+.skew-btn > * {
+  transform: skewX(6deg);
+}
+
+/* Certificate viewer print protection */
+@media print {
+  .cert-viewer,
+  .cert-viewer * {
+    display: none !important;
+  }
+  .print-disabled-msg {
+    display: block !important;
+  }
+}
+

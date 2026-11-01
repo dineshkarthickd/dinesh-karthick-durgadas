@@ -1,0 +1,161 @@
+[
+  {
+    "title": "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+    "issuer": "Oracle",
+    "date": "2025-03-11",
+    "tier": "gold",
+    "preview": "oracle-oci-foundations-associate",
+    "srcName": "Oracle Cloud Infrastructure_Certificate.pdf"
+  },
+  {
+    "title": "Oracle Cloud Architecture",
+    "issuer": "Oracle · Naan Mudhalvan (Govt. of Tamil Nadu)",
+    "date": "2025-05-09",
+    "tier": "gold",
+    "preview": "oracle-cloud-architecture",
+    "srcName": "Oracle_Cloud_Architecture_Certificate.pdf"
+  },
+  {
+    "title": "Oracle Database Foundation",
+    "issuer": "Oracle · Naan Mudhalvan (Govt. of Tamil Nadu)",
+    "date": "2025-05-09",
+    "tier": "gold",
+    "preview": "oracle-database-foundation",
+    "srcName": "Oracle_Database_Foundation_Certificate.pdf"
+  },
+  {
+    "title": "English Communication Assessment & Certification",
+    "issuer": "Cambridge · Naan Mudhalvan (Govt. of Tamil Nadu)",
+    "date": "2025-05-09",
+    "tier": "gold",
+    "preview": "cambridge-english-communication",
+    "srcName": "Overview of English Communication Assesment & Certification From Cambridge.pdf"
+  },
+  {
+    "title": "Fundamentals of Coding & Cloud",
+    "issuer": "SmartBridge · Naan Mudhalvan (Govt. of Tamil Nadu)",
+    "date": "2025-05-09",
+    "tier": "gold",
+    "preview": "fundamentals-of-coding-and-cloud",
+    "srcName": "Fundamentals of Clouding and Code_Certificate.pdf"
+  },
+  {
+    "title": "Journey to Cloud: Envisioning Your Solution",
+    "issuer": "IBM SkillsBuild",
+    "date": "2024-09-11",
+    "tier": "gold",
+    "preview": "ibm-journey-to-cloud",
+    "srcName": "Journey to Cloud Envisioning Your Solution_Certificate.pdf",
+    "verify": "https://www.credly.com/go/Sp2eB0U1"
+  },
+  {
+    "title": "Docker for .NET Developer — Getting Started",
+    "issuer": "Udemy",
+    "date": "2025-12-16",
+    "tier": "silver",
+    "preview": "udemy-docker-for-dotnet",
+    "srcName": "Docker For .Net Developer.pdf",
+    "verify": "https://ude.my/UC-863247d2-913f-4d5d-8b4a-781f5b467d78"
+  },
+  {
+    "title": "Complete Figma Course: Web & Mobile Projects from Scratch",
+    "issuer": "Udemy",
+    "date": "2025-11-09",
+    "tier": "silver",
+    "preview": "udemy-figma-complete-course",
+    "srcName": "Complete Figma Course  Web & Mobile Project from Scratch.pdf",
+    "verify": "https://ude.my/UC-510ec8f4-bb65-4f97-82e7-45c482189150"
+  },
+  {
+    "title": "Entity Framework Core — The Complete Guide (.NET Core 7)",
+    "issuer": "Udemy",
+    "date": "2025-06-13",
+    "tier": "silver",
+    "preview": "udemy-entity-framework-core",
+    "srcName": "Entitt Framework .Net Core 7.pdf",
+    "verify": "https://ude.my/UC-4f2efdce-1f39-4afc-8857-2dc7e111ebc6"
+  },
+  {
+    "title": "70-462: SQL Server Database Administration (DBA)",
+    "issuer": "Udemy",
+    "date": "2025-06-13",
+    "tier": "silver",
+    "preview": "udemy-sql-server-dba",
+    "srcName": "SQL Server Database Administration_Certificate.pdf",
+    "verify": "https://ude.my/UC-8e066794-62f8-4689-af67-fad400b15afe"
+  },
+  {
+    "title": "Frontend Web Developer — Modern HTML, CSS, JavaScript",
+    "issuer": "Udemy",
+    "date": "2025-05-14",
+    "tier": "silver",
+    "preview": "udemy-frontend-web-developer",
+    "srcName": "Frontend web developer Modern HTML CSS JavaScript_Certification.pdf",
+    "verify": "https://ude.my/UC-46993a4d-fe3c-45f4-ad9e-32f6d3918e7e"
+  },
+  {
+    "title": "PostgreSQL Developer",
+    "issuer": "Infosys Springboard",
+    "date": "2026-10-30",
+    "tier": "bronze",
+    "preview": "infosys-postgresql-developer",
+    "srcName": "PostgreSql Developer.pdf"
+  },
+  {
+    "title": "Advanced C# Programming",
+    "issuer": "Infosys Springboard",
+    "date": "2025-06-12",
+    "tier": "bronze",
+    "preview": "infosys-advanced-csharp",
+    "srcName": "Advanced CSharp Programming_Certificate.pdf"
+  },
+  {
+    "title": "Programming in C",
+    "issuer": "Infosys Springboard",
+    "date": "2025-06-12",
+    "tier": "bronze",
+    "preview": "infosys-programming-in-c",
+    "srcName": "Programming in C_Certificate.pdf"
+  },
+  {
+    "title": "Basics of Python",
+    "issuer": "Infosys Springboard",
+    "date": "2025-06-11",
+    "tier": "bronze",
+    "preview": "infosys-basics-of-python",
+    "srcName": "Basic of Python_Certificate.pdf"
+  },
+  {
+    "title": "Introduction to Microsoft Office",
+    "issuer": "Coursera Project Network",
+    "date": "2025-06-10",
+    "tier": "bronze",
+    "preview": "coursera-microsoft-office",
+    "srcName": "Microsoft Office_Certificate.pdf",
+    "verify": "https://coursera.org/verify/WMT6RQVL62G9"
+  },
+  {
+    "title": "Database and SQL",
+    "issuer": "Infosys Springboard",
+    "date": "2025-05-16",
+    "tier": "bronze",
+    "preview": "infosys-database-and-sql",
+    "srcName": "Database and Sql_Certificate.pdf"
+  },
+  {
+    "title": "Beginning PHP",
+    "issuer": "Infosys Springboard",
+    "date": "2025-05-15",
+    "tier": "bronze",
+    "preview": "infosys-beginning-php",
+    "srcName": "Beginning PHP_Certificate.pdf"
+  },
+  {
+    "title": "ReactJS",
+    "issuer": "Infosys Springboard",
+    "date": "2025-05-13",
+    "tier": "bronze",
+    "preview": "infosys-reactjs",
+    "srcName": "React_Certificate.pdf"
+  }
+]
