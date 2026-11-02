@@ -6,12 +6,12 @@ import { ALL_SECTION_IDS } from '../data/routes';
 export type SectionId = typeof ALL_SECTION_IDS[number];
 export const ALL_SECTIONS = ALL_SECTION_IDS as readonly SectionId[];
 
-export interface XpDelta {
+interface XpDelta {
   amount: number;
   key: number;
 }
 
-export interface MissionPassedEvent {
+interface MissionPassedEvent {
   section: SectionId;
   key: number;
 }
@@ -95,13 +95,4 @@ export function useGameActions(): ActionsContextType {
   }
   return context;
 }
-
-export function useGame() {
-  const progress = useProgress();
-  const ui = useUi();
-  const actions = useGameActions();
-  return { ...progress, ...ui, ...actions };
-}
-
-export { GameProvider } from './GameProvider';
 

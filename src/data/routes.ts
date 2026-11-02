@@ -1,23 +1,3 @@
-export interface RouteConfigItem {
-  readonly path: string;
-  readonly sectionId?: string;
-  readonly label: string;
-  readonly menuLabel: string;
-  readonly accent: string;
-  readonly artKey: string;
-  readonly stillSrc: string;
-  readonly alt: string;
-  readonly area: {
-    readonly name: string;
-    readonly district?: string;
-  };
-  readonly focus: {
-    readonly x: string;
-    readonly y: string;
-  };
-  readonly menuBadge: string;
-}
-
 export const ROUTES = [
   {
     path: '/',
@@ -136,25 +116,18 @@ export const ROUTES = [
   },
 ] as const;
 
-export type RoutePath = typeof ROUTES[number]['path'];
-export type RouteArtKey = typeof ROUTES[number]['artKey'];
-
 export const ROUTE_SEQUENCE: readonly string[] = ROUTES.map((r) => r.path);
 
 export const TOTAL_SECTIONS = ROUTES.filter((r) => 'sectionId' in r && r.sectionId).length;
 
-export const SECTION_ROUTES = ROUTES.filter(
-  (r): r is typeof r & { sectionId: string } => 'sectionId' in r && Boolean(r.sectionId)
-);
+type SectionRoute = Extract<typeof ROUTES[number], { sectionId: string }>;
 
-export const ALL_SECTION_IDS = SECTION_ROUTES.map((r) => r.sectionId);
+export const ALL_SECTION_IDS = (
+  ROUTES.filter((r): r is SectionRoute => 'sectionId' in r && Boolean(r.sectionId))
+).map((r) => r.sectionId);
 
 export function getRouteByPath(path: string): typeof ROUTES[number] | undefined {
   return ROUTES.find((r) => r.path === path);
-}
-
-export function getRouteByArtKey(artKey: string): typeof ROUTES[number] | undefined {
-  return ROUTES.find((r) => r.artKey === artKey);
 }
 
 export interface ArtFocus {

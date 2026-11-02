@@ -21,7 +21,7 @@ export function isSfxEnabled(): boolean {
   return sfxEnabled;
 }
 
-export function setSfxEnabled(enabled: boolean): void {
+function setSfxEnabled(enabled: boolean): void {
   sfxEnabled = enabled;
   try {
     localStorage.setItem(SFX_STORAGE_KEY, String(enabled));

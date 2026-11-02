@@ -21,7 +21,7 @@ const LAYER_PRIORITY: Record<InputLayer, number> = {
   certViewer: 60,
 };
 
-export type KeyHandler = (e: KeyboardEvent) => void;
+type KeyHandler = (e: KeyboardEvent) => void;
 export type KeyHandlerMap = Record<string, KeyHandler>;
 
 interface LayerRegistration {
@@ -49,9 +49,6 @@ export function getActiveLayer(): InputLayer | null {
   return topLayer;
 }
 
-export function isLayerTop(layer: InputLayer): boolean {
-  return getActiveLayer() === layer;
-}
 
 function isInteractiveTarget(target: EventTarget | null, key: string): boolean {
   if (!(target instanceof HTMLElement)) return false;

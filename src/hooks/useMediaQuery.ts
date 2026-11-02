@@ -7,7 +7,7 @@
 
 import { useSyncExternalStore } from 'react';
 
-export const DESKTOP_MEDIA_QUERY = '(min-width: 1024px) and (orientation: landscape)';
+const DESKTOP_MEDIA_QUERY = '(min-width: 1024px) and (orientation: landscape)';
 
 interface QueryStore {
   subscribe: (callback: () => void) => () => void;
@@ -41,7 +41,7 @@ function getOrCreateStore(query: string): QueryStore {
 
 const getServerSnapshot = () => false;
 
-export function useMediaQuery(query: string): boolean {
+function useMediaQuery(query: string): boolean {
   const store = getOrCreateStore(query);
   return useSyncExternalStore(store.subscribe, store.getSnapshot, getServerSnapshot);
 }

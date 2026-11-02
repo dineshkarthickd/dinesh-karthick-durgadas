@@ -185,7 +185,7 @@ const AppContent: React.FC = () => {
   );
 };
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
   return (
     <MotionConfig reducedMotion="user">
       <GameProvider>

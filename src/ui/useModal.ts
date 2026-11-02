@@ -12,7 +12,7 @@ import { useEffect, useRef } from 'react';
 
 let inertModalCount = 0;
 
-export function setRootInert(inert: boolean) {
+function setRootInert(inert: boolean) {
   if (typeof document === 'undefined') return;
   const root = document.getElementById('root');
   if (!root) return;

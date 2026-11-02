@@ -265,5 +265,3 @@ export const Loadout: React.FC = () => {
   if (typeof document === 'undefined') return null;
   return createPortal(modalContent, document.body);
 };
-
-export default Loadout;
