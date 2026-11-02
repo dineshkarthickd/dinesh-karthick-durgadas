@@ -67,14 +67,14 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
 
       if (nextRoute) {
         const preloadNext = new Image();
-        preloadNext.src = nextRoute.stillSrc;
+        preloadNext.src = isDesktop ? nextRoute.stillSrc : nextRoute.stillSrc.replace('.webp', '-1280.webp');
       }
       if (prevRoute) {
         const preloadPrev = new Image();
-        preloadPrev.src = prevRoute.stillSrc;
+        preloadPrev.src = isDesktop ? prevRoute.stillSrc : prevRoute.stillSrc.replace('.webp', '-1280.webp');
       }
     }
-  }, [location.pathname]);
+  }, [location.pathname, isDesktop]);
 
   const { prevRoute, nextRoute } = getPrevNextRoutes(location.pathname);
 

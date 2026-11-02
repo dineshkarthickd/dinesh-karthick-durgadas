@@ -64,9 +64,11 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
       }
     };
 
+    const isSmall = typeof window !== 'undefined' && window.innerWidth <= 1024;
     ARTWORKS.forEach((src) => {
+      const targetSrc = isSmall ? src.replace('.webp', '-1280.webp') : src;
       const img = new Image();
-      img.src = src;
+      img.src = targetSrc;
       img.onload = () => {
         if (!cancelled) {
           loadedCount++;

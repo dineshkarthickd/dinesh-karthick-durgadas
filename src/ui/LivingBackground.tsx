@@ -104,11 +104,15 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
     }
   };
 
+  const responsiveSrcSet = `/art/${artKey}-1280.webp 1280w, /art/${artKey}.webp 2560w`;
+
   return (
     <div ref={containerRef} className="relative w-full h-full overflow-hidden" style={style}>
-      {/* 1. Still image (immediate poster and solid fallback) */}
+      {/* 1. Still image (immediate poster and solid fallback for reduced motion / Save-Data) */}
       <img
         src={stillSrc}
+        srcSet={responsiveSrcSet}
+        sizes="(max-width: 1024px) 1280px, 2560px"
         alt={alt}
         className={className}
         style={{
@@ -116,7 +120,20 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
         }}
       />
 
-      {/* 2. Living Video Layer (WebM + MP4 fallback) */}
+      {/* 2. Poster layer under video (exact matching 720p frame so video fades in seamlessly without softening 4K) */}
+      {canRenderVideo && (
+        <img
+          src={`/art/video/${artKey}-poster.webp`}
+          alt=""
+          aria-hidden="true"
+          className={`${className} absolute inset-0 pointer-events-none`}
+          style={{
+            objectPosition: `${focusX} ${focusY}`,
+          }}
+        />
+      )}
+
+      {/* 3. Living Video Layer (WebM + MP4 fallback) */}
       {canRenderVideo && (
         <video
           ref={videoRef}

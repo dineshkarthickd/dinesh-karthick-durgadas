@@ -29,17 +29,31 @@ npm run lint
 
 ## Asset Pipeline Scripts
 
-### 1. Living Video Background Encoding
+### 1. Still Artwork Responsive Rendering
 
-Encodes cross-faded seamless video loops (WebM VP9 & MP4 H.264) and first-frame posters from `../art/videos` into `public/art/video/`:
+Renders optimized 2560px (desktop) and 1280px (mobile/tablet) WebP still sets with stripped metadata from `../art 2`:
 
 ```bash
-node scripts/encode-videos.mjs
-# Override video source folder:
-node scripts/encode-videos.mjs --src ../custom/videos
+npm run render-art
+# or with custom source path:
+node scripts/render-art.mjs "../custom/art"
+node scripts/render-art.mjs --src ../custom/art
 ```
 
-### 2. Watermarked Certificate Previews
+### 2. Living Video Background Encoding
+
+Encodes cross-faded seamless video loops (WebM VP9 & MP4 H.264) and first-frame posters from `../art 2/videos` (or `../art/videos`) into `public/art/video/`:
+
+```bash
+npm run encode-videos
+# Override video source folder as positional argument or --src:
+node scripts/encode-videos.mjs "../art 2/videos"
+node scripts/encode-videos.mjs --src "../art 2/videos"
+# Force re-encoding:
+node scripts/encode-videos.mjs "../art 2/videos" --force
+```
+
+### 3. Watermarked Certificate Previews
 
 Renders watermarked 1400px WebP certificate previews from offline PDF documents in `../Certificates` into `src/assets/certs/`:
 

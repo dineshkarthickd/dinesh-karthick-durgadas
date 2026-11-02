@@ -52,6 +52,8 @@ export const MenuPreviewCard: React.FC<MenuPreviewCardProps> = ({
           >
             <img
               src={selectedItem.art}
+              srcSet={`${selectedItem.art.replace('.webp', '-1280.webp')} 1280w, ${selectedItem.art} 2560w`}
+              sizes="(max-width: 1024px) 1280px, 420px"
               alt={selectedItem.label}
               className="w-full h-full object-cover"
               style={{ objectPosition: `${selectedItem.focusX} 0%` }}

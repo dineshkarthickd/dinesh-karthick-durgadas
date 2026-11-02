@@ -12,11 +12,21 @@ const siteDir = path.resolve(__dirname, '..');
 
 const args = process.argv.slice(2);
 const srcArgIndex = args.indexOf('--src');
-const customSrc = srcArgIndex !== -1 ? args[srcArgIndex + 1] : null;
+const customSrc = srcArgIndex !== -1 ? args[srcArgIndex + 1] : (args[0] && !args[0].startsWith('-') ? args[0] : null);
+const forceEncode = args.includes('--force');
 
-const artVideosDir = customSrc
-  ? path.resolve(process.cwd(), customSrc)
-  : path.resolve(siteDir, '../art/videos');
+let artVideosDir;
+if (customSrc) {
+  if (path.isAbsolute(customSrc)) {
+    artVideosDir = customSrc;
+  } else if (fs.existsSync(path.resolve(process.cwd(), customSrc))) {
+    artVideosDir = path.resolve(process.cwd(), customSrc);
+  } else {
+    artVideosDir = path.resolve(siteDir, customSrc);
+  }
+} else {
+  artVideosDir = path.resolve(siteDir, '../art/videos');
+}
 
 const outputDir = path.resolve(siteDir, 'public/art/video');
 
@@ -76,6 +86,7 @@ async function run() {
     const posterOut = path.join(outputDir, `${key}-poster.webp`);
 
     const shouldEncode =
+      forceEncode ||
       !fs.existsSync(mp4Out) ||
       !fs.existsSync(webmOut) ||
       !fs.existsSync(posterOut) ||
@@ -92,7 +103,7 @@ async function run() {
       // 1. Generate seamless loop MP4
       const filterComplex = `[0:v]split[a][b];[a]trim=start=0.8,setpts=PTS-STARTPTS[main];[b]trim=end=0.8,setpts=PTS-STARTPTS[head];[main][head]xfade=transition=fade:duration=0.8:offset=${offset},format=yuv420p[v]`;
 
-      console.log('  Generating MP4 (H.264 high, CRF 25)...');
+      console.log('  Generating MP4 (H.264 high, CRF 23)...');
       execFileSync(
         ffmpegPath,
         [
@@ -106,7 +117,7 @@ async function run() {
           '-c:v',
           'libx264',
           '-crf',
-          '25',
+          '23',
           '-pix_fmt',
           'yuv420p',
           '-movflags',
@@ -136,8 +147,8 @@ async function run() {
         { stdio: 'inherit' }
       );
 
-      // 3. Generate WebM (VP9, CRF 34, -b:v 0)
-      console.log('  Generating WebM (VP9, CRF 34)...');
+      // 3. Generate WebM (VP9, CRF 32, -b:v 0)
+      console.log('  Generating WebM (VP9, CRF 32)...');
       execFileSync(
         ffmpegPath,
         [
@@ -147,7 +158,7 @@ async function run() {
           '-c:v',
           'libvpx-vp9',
           '-crf',
-          '34',
+          '32',
           '-b:v',
           '0',
           '-an',
