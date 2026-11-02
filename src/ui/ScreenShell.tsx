@@ -20,6 +20,7 @@ export interface ScreenShellProps {
   preTitle?: string;
   children: React.ReactNode;
   showNav?: boolean;
+  fillHeight?: boolean;
 }
 
 export const ScreenShell: React.FC<ScreenShellProps> = ({
@@ -32,6 +33,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
   preTitle,
   children,
   showNav = true,
+  fillHeight = false,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -139,7 +141,9 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
           <motion.div
             ref={desktopPanelRef}
             exit={{ opacity: 0, x: -24, transition: { duration: 0.2 } }}
-            className="panel-scroll absolute overflow-y-auto overscroll-contain z-10 flex flex-col"
+            className={`absolute overscroll-contain z-10 flex flex-col ${
+              fillHeight ? 'overflow-hidden' : 'panel-scroll overflow-y-auto'
+            }`}
             style={{
               left: 'var(--frame-x)',
               top: 'max(calc(56px + 24px), var(--gutter-y))',
@@ -151,13 +155,13 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
               variants={desktopContainerVariants}
               initial="hidden"
               animate="visible"
-              className="my-auto py-2 flex flex-col"
+              className={`py-2 flex flex-col ${fillHeight ? 'h-full min-h-0' : 'my-auto'}`}
               style={{ gap: 'clamp(6px, 1.1vh, 12px)' }}
             >
               {/* Title Block */}
               <motion.div
                 variants={desktopItemVariants}
-                className="flex flex-col mb-2.5 select-none inline-block self-start"
+                className="shrink-0 flex flex-col mb-2.5 select-none inline-block self-start"
               >
                 {preTitle && (
                   <div
@@ -198,7 +202,11 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
               {/* Direct children */}
               {React.Children.map(children, (child, idx) =>
                 React.isValidElement(child) ? (
-                  <motion.div key={idx} variants={desktopItemVariants}>
+                  <motion.div
+                    key={idx}
+                    variants={desktopItemVariants}
+                    className={fillHeight ? 'flex-1 min-h-0 flex flex-col' : undefined}
+                  >
                     {child}
                   </motion.div>
                 ) : (

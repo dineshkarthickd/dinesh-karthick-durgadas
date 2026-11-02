@@ -20,6 +20,20 @@ export function useSmoothScroll(
       return;
     }
 
+    // Safety check: only attach Lenis if wrapper is an actual scroll container
+    if (typeof window !== 'undefined') {
+      const computedOverflowY = window.getComputedStyle(wrapper).overflowY;
+      if (computedOverflowY !== 'auto' && computedOverflowY !== 'scroll') {
+        if (import.meta.env.DEV) {
+          console.warn(
+            '[useSmoothScroll] Wrapper is not a scroll container (computed overflow-y is not auto or scroll):',
+            wrapper
+          );
+        }
+        return;
+      }
+    }
+
     const lenis = new Lenis({
       wrapper,
       content: wrapper,
@@ -34,6 +48,9 @@ export function useSmoothScroll(
       lenis.resize();
     });
     resizeObserver.observe(wrapper);
+    if (wrapper.firstElementChild) {
+      resizeObserver.observe(wrapper.firstElementChild);
+    }
 
     let rafId: number;
     function raf(time: number) {

@@ -6,6 +6,7 @@ import { PrimaryButton } from './PrimaryButton';
 import { useModal } from './useModal';
 import { useHotkeys } from '../lib/inputLayer';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
+import { useIsDesktop } from '../hooks/useMediaQuery';
 import type { projects } from '../data/portfolio';
 
 type Project = (typeof projects)[number];
@@ -23,7 +24,8 @@ export const ProjectBriefingModal: React.FC<ProjectBriefingModalProps> = ({
 }) => {
   const briefingPanelRef = useRef<HTMLDivElement | null>(null);
   const briefingCloseBtnRef = useRef<HTMLButtonElement | null>(null);
-  useSmoothScroll(briefingPanelRef, !!project);
+  const isDesktop = useIsDesktop();
+  useSmoothScroll(briefingPanelRef, Boolean(project) && isDesktop);
 
   useModal({
     isOpen: !!project,
@@ -62,7 +64,7 @@ export const ProjectBriefingModal: React.FC<ProjectBriefingModalProps> = ({
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-[#0a0a0e] border-2 rounded-xl p-5 sm:p-7 shadow-2xl flex flex-col justify-between"
+            className="w-full max-w-2xl max-h-[85vh] overflow-y-auto overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden bg-[#0a0a0e] border-2 rounded-xl p-5 sm:p-7 shadow-2xl flex flex-col justify-between"
             style={{ borderColor: accentColor }}
           >
             <div>
