@@ -67,11 +67,11 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
 
       if (nextRoute) {
         const preloadNext = new Image();
-        preloadNext.src = isDesktop ? nextRoute.stillSrc : nextRoute.stillSrc.replace('.webp', '-1280.webp');
+        preloadNext.src = isDesktop ? nextRoute.stillSrc : nextRoute.stillSrc.replace(/\.webp$/, '-1280.webp');
       }
       if (prevRoute) {
         const preloadPrev = new Image();
-        preloadPrev.src = isDesktop ? prevRoute.stillSrc : prevRoute.stillSrc.replace('.webp', '-1280.webp');
+        preloadPrev.src = isDesktop ? prevRoute.stillSrc : prevRoute.stillSrc.replace(/\.webp$/, '-1280.webp');
       }
     }
   }, [location.pathname, isDesktop]);
@@ -223,7 +223,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
                   <button
                     type="button"
                     onClick={() => handleNav(prevRoute)}
-                    className="flex items-center gap-1 font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-[#b9b4ab] hover:text-white transition-colors cursor-pointer group"
+                    className="flex items-center gap-1 font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-[#b9b4ab] hover:text-white transition-colors group"
                   >
                     <ChevronLeft size={14} className="transition-transform group-hover:-translate-x-1" />
                     PREV
@@ -234,7 +234,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
                   <button
                     type="button"
                     onClick={() => handleNav(nextRoute)}
-                    className="flex items-center gap-1 font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-[#b9b4ab] hover:text-white transition-colors cursor-pointer group"
+                    className="flex items-center gap-1 font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-[#b9b4ab] hover:text-white transition-colors group"
                   >
                     NEXT
                     <ChevronRight size={14} className="transition-transform group-hover:translate-x-1" />
@@ -250,7 +250,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
                     playBackSound();
                     navigate('/');
                   }}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  className="hover:text-white transition-colors "
                 >
                   <span className="text-vice-pink">ESC</span> — MENU
                 </button>
@@ -261,7 +261,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
                     playSelectSound();
                     toggleLoadout();
                   }}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  className="hover:text-white transition-colors "
                 >
                   <span className="text-[#38d6ff]">Q</span> — LOADOUT
                 </button>

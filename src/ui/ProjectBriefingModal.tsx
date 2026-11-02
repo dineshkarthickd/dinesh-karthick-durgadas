@@ -88,7 +88,7 @@ export const ProjectBriefingModal: React.FC<ProjectBriefingModalProps> = ({
                   type="button"
                   onClick={onClose}
                   aria-label="Close mission briefing"
-                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-[#b9b4ab] hover:text-white transition-colors cursor-pointer"
+                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-[#b9b4ab] hover:text-white transition-colors "
                 >
                   <X size={20} />
                 </button>
@@ -174,7 +174,7 @@ export const ProjectBriefingModal: React.FC<ProjectBriefingModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-wider text-[#b9b4ab] hover:text-white transition-colors cursor-pointer"
+                className="font-['Barlow_Condensed'] font-bold text-sm uppercase tracking-wider text-[#b9b4ab] hover:text-white transition-colors "
               >
                 CLOSE BRIEFING (ESC)
               </button>

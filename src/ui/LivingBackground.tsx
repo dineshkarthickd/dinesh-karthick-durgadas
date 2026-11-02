@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { loadManifest, shouldDisableVideo } from '../lib/videoUtils';
+import { useIsDesktop } from '../hooks/useMediaQuery';
 
 interface LivingBackgroundProps {
   stillSrc: string;
@@ -104,15 +105,18 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
     }
   };
 
+  const isDesktop = useIsDesktop();
+  const baseSrc = stillSrc.replace(/-1280\.webp$/, '.webp');
+  const defaultStill = isDesktop ? baseSrc : baseSrc.replace(/\.webp$/, '-1280.webp');
   const responsiveSrcSet = `/art/${artKey}-1280.webp 1280w, /art/${artKey}.webp 2560w`;
 
   return (
     <div ref={containerRef} className="relative w-full h-full overflow-hidden" style={style}>
       {/* 1. Still image (immediate poster and solid fallback for reduced motion / Save-Data) */}
       <img
-        src={stillSrc}
+        src={defaultStill}
         srcSet={responsiveSrcSet}
-        sizes="(max-width: 1024px) 1280px, 2560px"
+        sizes="100vw"
         alt={alt}
         className={className}
         style={{

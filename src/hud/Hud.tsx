@@ -118,7 +118,7 @@ export const Hud: React.FC = () => {
           <button
             type="button"
             onClick={handleToggleSfx}
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-['Barlow_Condensed'] font-bold uppercase tracking-wider border backdrop-blur-md transition-colors cursor-pointer ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-['Barlow_Condensed'] font-bold uppercase tracking-wider border backdrop-blur-md transition-colors ${
               sfxOn
                 ? 'bg-black/60 border-white/20 text-[#5fd068] hover:border-[#5fd068]'
                 : 'bg-black/60 border-white/20 text-[#b9b4ab] hover:text-white'
@@ -152,7 +152,7 @@ export const Hud: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleOpenLoadout}
-                  className="flex items-center gap-1 hover:text-white cursor-pointer"
+                  className="flex items-center gap-1 hover:text-white "
                   title="Change equipped skill tree"
                 >
                   <Crosshair size={12} />
@@ -166,7 +166,7 @@ export const Hud: React.FC = () => {
                     unequipTree();
                   }}
                   aria-label="Unequip skill tree"
-                  className="hover:text-white px-0.5 cursor-pointer leading-none font-bold"
+                  className="hover:text-white px-0.5 leading-none font-bold"
                   title="Unequip"
                 >
                   ✕
@@ -176,7 +176,7 @@ export const Hud: React.FC = () => {
               <button
                 type="button"
                 onClick={handleOpenLoadout}
-                className="flex items-center gap-1 ml-1 px-2 py-0.5 rounded bg-white/5 border border-white/20 text-[#b9b4ab] hover:text-white hover:border-vice-pink font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider backdrop-blur-sm cursor-pointer transition-colors"
+                className="flex items-center gap-1 ml-1 px-2 py-0.5 rounded bg-white/5 border border-white/20 text-[#b9b4ab] hover:text-white hover:border-vice-pink font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider backdrop-blur-sm transition-colors"
                 title="Open Tech Stack Loadout (Q)"
               >
                 <Crosshair size={12} />
@@ -223,7 +223,7 @@ export const Hud: React.FC = () => {
             <button
               type="button"
               onClick={handleBackToMenu}
-              className="flex items-center gap-1.5 py-1 px-2 -ml-1 rounded border border-white/10 bg-black/40 text-[#b9b4ab] hover:text-white hover:border-vice-pink transition-colors cursor-pointer text-xs font-['Barlow_Condensed'] font-bold uppercase tracking-wider"
+              className="flex items-center gap-1.5 py-1 px-2 -ml-1 rounded border border-white/10 bg-black/40 text-[#b9b4ab] hover:text-white hover:border-vice-pink transition-colors text-xs font-['Barlow_Condensed'] font-bold uppercase tracking-wider"
               title="Return to Main Menu"
             >
               <Gamepad2 size={16} className="text-vice-pink" />
@@ -240,7 +240,7 @@ export const Hud: React.FC = () => {
           <button
             type="button"
             onClick={handleToggleSfx}
-            className={`p-1.5 rounded border transition-colors cursor-pointer ${
+            className={`p-1.5 rounded border transition-colors ${
               sfxOn
                 ? 'border-white/15 bg-black/40 text-[#5fd068]'
                 : 'border-white/10 bg-black/30 text-[#b9b4ab]'
@@ -276,7 +276,7 @@ export const Hud: React.FC = () => {
           <button
             type="button"
             onClick={handleOpenLoadout}
-            className={`relative flex flex-col items-center justify-center w-8 h-8 rounded border transition-all cursor-pointer ${
+            className={`relative flex flex-col items-center justify-center w-8 h-8 rounded border transition-all ${
               equipped
                 ? 'bg-[#38d6ff]/20 border-[#38d6ff] text-[#38d6ff]'
                 : 'bg-white/5 border-white/20 text-white hover:border-vice-pink'
@@ -303,7 +303,7 @@ export const Hud: React.FC = () => {
             <button
               type="button"
               onClick={handleOpenLoadout}
-              className="absolute right-0 top-12 z-50 bg-vice-pink text-white px-2.5 py-1 rounded text-[11px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider whitespace-nowrap shadow-xl animate-bounce cursor-pointer flex items-center gap-1 border-0"
+              className="absolute right-0 top-12 z-50 bg-vice-pink text-white px-2.5 py-1 rounded text-[11px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider whitespace-nowrap shadow-xl animate-bounce flex items-center gap-1 border-0"
             >
               <span>Tap to see my tech stack</span>
               <span className="absolute -top-1.5 right-3.5 w-3 h-3 bg-vice-pink rotate-45 pointer-events-none" />

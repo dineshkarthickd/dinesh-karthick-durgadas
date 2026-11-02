@@ -146,7 +146,7 @@ export const Achievements: React.FC = () => {
                         setActiveTab(tab);
                       }
                     }}
-                    className={`px-3 h-[30px] flex items-center justify-center rounded font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider transition-all cursor-pointer ${
+                    className={`px-3 h-[30px] flex items-center justify-center rounded font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider transition-all ${
                       isActive
                         ? 'bg-[#e64bff] text-white shadow-[0_2px_10px_rgba(230,75,255,0.4)]'
                         : 'bg-white/5 text-[#b9b4ab] hover:bg-white/10 hover:text-white'
@@ -164,7 +164,7 @@ export const Achievements: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleClearFilter}
-                  className="hover:text-white ml-0.5 cursor-pointer leading-none font-bold"
+                  className="hover:text-white ml-0.5 leading-none font-bold"
                   title="Clear active filter"
                   aria-label="Clear active filter"
                 >
@@ -222,7 +222,7 @@ export const Achievements: React.FC = () => {
                       const idx = filteredCerts.findIndex((c) => c.preview === cert.preview);
                       setViewerIndex(idx >= 0 ? idx : 0);
                     }}
-                    className="flex items-center gap-1 px-2.5 py-1 lg:px-2 lg:py-0.5 rounded bg-white/10 hover:bg-[#e64bff] hover:text-white text-[11px] lg:text-[10.5px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-neutral-200 transition-colors cursor-pointer"
+                    className="flex items-center gap-1 px-2.5 py-1 lg:px-2 lg:py-0.5 rounded bg-white/10 hover:bg-[#e64bff] hover:text-white text-[11px] lg:text-[10.5px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-neutral-200 transition-colors "
                   >
                     <FileText size={12} />
                     VIEW

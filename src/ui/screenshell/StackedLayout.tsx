@@ -209,7 +209,7 @@ export const StackedLayout: React.FC<StackedLayoutProps> = ({
                     type="button"
                     onClick={() => onNav(prevRoute)}
                     style={{ height: 'var(--m-btn-h)', fontSize: 'var(--m-btn-text)' }}
-                    className="border border-white/20 bg-black/40 hover:bg-white/10 text-white rounded font-['Barlow_Condensed'] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                    className="border border-white/20 bg-black/40 hover:bg-white/10 text-white rounded font-['Barlow_Condensed'] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors "
                   >
                     <ChevronLeft size={16} />
                     PREV
@@ -228,7 +228,7 @@ export const StackedLayout: React.FC<StackedLayoutProps> = ({
                       backgroundColor: accentColor,
                       color: '#000000',
                     }}
-                    className="font-['Barlow_Condensed'] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all hover:brightness-110 shadow-lg cursor-pointer rounded"
+                    className="font-['Barlow_Condensed'] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-all hover:brightness-110 shadow-lg rounded"
                   >
                     NEXT
                     <ChevronRight size={16} />

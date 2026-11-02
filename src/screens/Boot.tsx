@@ -4,6 +4,7 @@ import { Loader2 } from 'lucide-react';
 import { haptic } from '../lib/feedback';
 import { playBootSound, initAudio } from '../lib/sfx';
 import { ROUTES } from '../data/routes';
+import { useIsDesktop } from '../hooks/useMediaQuery';
 
 interface BootProps {
   onComplete: () => void;
@@ -16,10 +17,9 @@ const TIPS = [
   'TIP: Visit every section to earn all 5 stars.',
 ];
 
-const ARTWORKS = ROUTES.map((r) => r.stillSrc);
-
 export const Boot: React.FC<BootProps> = ({ onComplete }) => {
   const prefersReduced = useReducedMotion();
+  const isDesktop = useIsDesktop();
   const onCompleteRef = useRef(onComplete);
   useEffect(() => {
     onCompleteRef.current = onComplete;
@@ -37,12 +37,16 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
     return () => clearInterval(tipInterval);
   }, []);
 
-  // Preload effect runs once
+  // Preload effect runs once per layout
   useEffect(() => {
     if (prefersReduced) {
       onCompleteRef.current();
       return;
     }
+
+    const artworks = ROUTES.map((r) =>
+      isDesktop ? r.stillSrc : r.stillSrc.replace('.webp', '-1280.webp')
+    );
 
     let cancelled = false;
     let loadedCount = 0;
@@ -53,22 +57,20 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
       if (cancelled) return;
       const elapsed = Date.now() - startTime;
       const timeRatio = Math.min(1, elapsed / minDuration);
-      const loadRatio = loadedCount / ARTWORKS.length;
+      const loadRatio = loadedCount / artworks.length;
       const combined = Math.min(100, Math.floor(((timeRatio + loadRatio) / 2) * 100));
 
       setProgress(combined);
 
-      if (elapsed >= minDuration && loadedCount >= ARTWORKS.length) {
+      if (elapsed >= minDuration && loadedCount >= artworks.length) {
         setProgress(100);
         setIsReady(true);
       }
     };
 
-    const isSmall = typeof window !== 'undefined' && window.innerWidth <= 1024;
-    ARTWORKS.forEach((src) => {
-      const targetSrc = isSmall ? src.replace('.webp', '-1280.webp') : src;
+    artworks.forEach((src) => {
       const img = new Image();
-      img.src = targetSrc;
+      img.src = src;
       img.onload = () => {
         if (!cancelled) {
           loadedCount++;
@@ -91,7 +93,7 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
       cancelled = true;
       clearInterval(timer);
     };
-  }, [prefersReduced]);
+  }, [prefersReduced, isDesktop]);
 
   // Handle any key press or tap to continue
   useEffect(() => {
@@ -149,7 +151,7 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
             <motion.div
               animate={{ opacity: [0.3, 1, 0.3] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="font-['Barlow_Condensed'] font-bold text-lg sm:text-xl uppercase tracking-[0.2em] text-vice-pink cursor-pointer"
+              className="font-['Barlow_Condensed'] font-bold text-lg sm:text-xl uppercase tracking-[0.2em] text-vice-pink "
             >
               PRESS ANY KEY / TAP TO START
             </motion.div>

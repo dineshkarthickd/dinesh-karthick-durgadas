@@ -109,7 +109,7 @@ export const Projects: React.FC = () => {
             <button
               type="button"
               onClick={handleClearFilter}
-              className="hover:text-white flex items-center gap-1 cursor-pointer"
+              className="hover:text-white flex items-center gap-1 "
             >
               <span>CLEAR</span>
               <X size={14} />
@@ -128,7 +128,7 @@ export const Projects: React.FC = () => {
                 key={project.id}
                 onClick={() => handleOpenProject(project)}
                 aria-label={`Open mission briefing: ${project.name}`}
-                className={`text-left w-full p-[var(--m-card-pad)] lg:p-4 rounded-xl border bg-[#0a0a0e]/85 backdrop-blur-md flex flex-col justify-between transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2ee6c5] ${
+                className={`text-left w-full p-[var(--m-card-pad)] lg:p-4 rounded-xl border bg-[#0a0a0e]/85 backdrop-blur-md flex flex-col justify-between transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2ee6c5] ${
                   isMatch
                     ? 'border-white/10 hover:border-[#2ee6c5] hover:shadow-[0_0_20px_rgba(46,230,197,0.3)]'
                     : 'opacity-35 grayscale border-white/5 hover:opacity-75'

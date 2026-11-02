@@ -52,7 +52,7 @@ export const LoadoutSheet: React.FC<LoadoutSheetProps> = ({
             <button
               type="button"
               onClick={() => onToggleExpand(idx)}
-              className="w-full flex items-center justify-between p-3 cursor-pointer text-left"
+              className="w-full flex items-center justify-between p-3 text-left"
             >
               <div className="flex items-center gap-3">
                 <div

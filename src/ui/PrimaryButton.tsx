@@ -38,8 +38,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   );
 
   const baseClasses = `
-    group relative inline-flex items-center justify-center px-6 py-2.5 sm:px-7 sm:py-3 cursor-pointer
-    transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
+    group relative inline-flex items-center justify-center px-6 py-2.5 sm:px-7 sm:py-3     transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed
     shadow-[0_4px_16px_rgba(0,0,0,0.6)] hover:brightness-110 hover:shadow-[0_6px_24px_rgba(0,0,0,0.8)]
     ${className}
   `;

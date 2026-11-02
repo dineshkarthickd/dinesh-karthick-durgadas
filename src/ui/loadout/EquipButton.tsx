@@ -27,7 +27,7 @@ export const EquipButton: React.FC<EquipButtonProps> = ({
     <button
       type="button"
       onClick={onEquip}
-      className={`w-full py-2 px-3 rounded flex items-center justify-center gap-1.5 bg-gradient-to-r from-vice-pink to-vice-cyan hover:brightness-110 text-white font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider shadow-lg transition-transform hover:scale-[1.02] cursor-pointer ${className}`}
+      className={`w-full py-2 px-3 rounded flex items-center justify-center gap-1.5 bg-gradient-to-r from-vice-pink to-vice-cyan hover:brightness-110 text-white font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider shadow-lg transition-transform hover:scale-[1.02] ${className}`}
       style={{ transform: 'skewX(-6deg)' }}
     >
       <span className="inline-block" style={{ transform: 'skewX(6deg)' }}>

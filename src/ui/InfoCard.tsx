@@ -44,7 +44,7 @@ export const InfoCard: React.FC<InfoCardProps> = ({
       <button
         type="button"
         onClick={onClick}
-        className={`text-left w-full group relative flex items-center gap-3.5 sm:gap-4 p-[var(--m-card-pad)] lg:py-3.5 lg:px-4 rounded-r-lg bg-[rgba(10,10,14,0.72)] backdrop-blur-md border border-white/10 transition-all duration-200 hover:translate-x-1.5 hover:border-white/30 cursor-pointer ${className}`}
+        className={`text-left w-full group relative flex items-center gap-3.5 sm:gap-4 p-[var(--m-card-pad)] lg:py-3.5 lg:px-4 rounded-r-lg bg-[rgba(10,10,14,0.72)] backdrop-blur-md border border-white/10 transition-all duration-200 hover:translate-x-1.5 hover:border-white/30 ${className}`}
         style={{
           borderLeft: `4px solid ${accentColor}`,
           boxShadow: '0 4px 20px rgba(0,0,0,0.4)',

@@ -166,7 +166,7 @@ export const Menu: React.FC = () => {
                       }}
                       onMouseEnter={() => handleHighlight(index)}
                       onClick={() => handleSelectItem(index)}
-                      className={`group relative flex items-center justify-between px-3 py-2 rounded text-left transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
+                      className={`group relative flex items-center justify-between px-3 py-2 rounded text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
                         isSelected
                           ? 'text-white'
                           : 'text-[#f2efe9]/80 hover:text-white bg-black/40 border border-white/5'
@@ -215,7 +215,7 @@ export const Menu: React.FC = () => {
                   playSelectSound();
                   toggleLoadout();
                 }}
-                className="font-['Barlow_Condensed'] font-bold text-[11px] uppercase tracking-wider text-[#b9b4ab] hover:text-white transition-colors cursor-pointer mt-3 self-start flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#38d6ff]"
+                className="font-['Barlow_Condensed'] font-bold text-[11px] uppercase tracking-wider text-[#b9b4ab] hover:text-white transition-colors mt-3 self-start flex items-center gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#38d6ff]"
               >
                 <span className="text-[#38d6ff]">Q</span> — LOADOUT
               </button>

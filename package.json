@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "cursor": "node scripts/make-cursor.mjs",
     "render-art": "node scripts/render-art.mjs",
     "favicons": "node scripts/make-favicons.mjs",
     "encode-videos": "node scripts/encode-videos.mjs",

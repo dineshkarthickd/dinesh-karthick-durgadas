@@ -115,7 +115,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
             type="button"
             onClick={onToggleZoom}
             aria-label={isZoomed ? 'Reset Zoom' : '2x Zoom'}
-            className="p-1.5 sm:p-2 rounded bg-white/10 hover:bg-white/20 text-[#b9b4ab] hover:text-white transition-colors cursor-pointer"
+            className="p-1.5 sm:p-2 rounded bg-white/10 hover:bg-white/20 text-[#b9b4ab] hover:text-white transition-colors "
             title={isZoomed ? 'Reset Zoom' : '2x Zoom'}
           >
             {isZoomed ? <ZoomOut size={16} /> : <ZoomIn size={16} />}
@@ -127,7 +127,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
             type="button"
             onClick={onClose}
             aria-label="Close certificate viewer"
-            className="p-1.5 sm:p-2 rounded bg-white/10 hover:bg-vice-pink hover:text-white text-[#b9b4ab] transition-colors cursor-pointer"
+            className="p-1.5 sm:p-2 rounded bg-white/10 hover:bg-vice-pink hover:text-white text-[#b9b4ab] transition-colors "
             title="Close (ESC)"
           >
             <X size={18} />
@@ -214,7 +214,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
               e.stopPropagation();
               onUnblur();
             }}
-            className="absolute inset-0 z-30 flex items-center justify-center cursor-pointer p-4"
+            className="absolute inset-0 z-30 flex items-center justify-center p-4"
           >
             <div className="px-5 py-3 rounded-lg bg-black/85 border border-[#ffc23d]/60 backdrop-blur-md shadow-2xl flex items-center gap-3 animate-pulse">
               <AlertCircle size={22} className="text-[#ffc23d] shrink-0" />
@@ -258,7 +258,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
             <button
               type="button"
               onClick={onPrev}
-              className="flex items-center gap-1 px-3 py-1.5 rounded bg-white/10 hover:bg-white/20 font-['Barlow_Condensed'] font-bold text-xs sm:text-sm uppercase tracking-wider text-white transition-colors cursor-pointer"
+              className="flex items-center gap-1 px-3 py-1.5 rounded bg-white/10 hover:bg-white/20 font-['Barlow_Condensed'] font-bold text-xs sm:text-sm uppercase tracking-wider text-white transition-colors "
               title="Previous certificate (←)"
             >
               <ChevronLeft size={16} />
@@ -267,7 +267,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
             <button
               type="button"
               onClick={onNext}
-              className="flex items-center gap-1 px-3 py-1.5 rounded bg-white/10 hover:bg-white/20 font-['Barlow_Condensed'] font-bold text-xs sm:text-sm uppercase tracking-wider text-white transition-colors cursor-pointer"
+              className="flex items-center gap-1 px-3 py-1.5 rounded bg-white/10 hover:bg-white/20 font-['Barlow_Condensed'] font-bold text-xs sm:text-sm uppercase tracking-wider text-white transition-colors "
               title="Next certificate (→)"
             >
               <span>NEXT</span>
@@ -290,7 +290,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="flex items-center gap-1 px-3 py-1.5 rounded bg-white/10 hover:bg-vice-pink hover:text-white font-['Barlow_Condensed'] font-bold text-xs sm:text-sm uppercase tracking-wider text-neutral-300 transition-colors cursor-pointer"
+            className="flex items-center gap-1 px-3 py-1.5 rounded bg-white/10 hover:bg-vice-pink hover:text-white font-['Barlow_Condensed'] font-bold text-xs sm:text-sm uppercase tracking-wider text-neutral-300 transition-colors "
           >
             <span>CLOSE</span>
             <span className="hidden lg:inline"> (ESC)</span>

@@ -87,7 +87,7 @@ export const Radio: React.FC = () => {
       type="button"
       onClick={toggleRadio}
       disabled={isAvailable === null}
-      className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs font-['Barlow_Condensed'] font-bold tracking-wider border backdrop-blur-md transition-all cursor-pointer ${
+      className={`flex items-center gap-2 px-3 py-1 rounded-full text-xs font-['Barlow_Condensed'] font-bold tracking-wider border backdrop-blur-md transition-all ${
         isPlaying
           ? 'bg-black/60 border-vice-pink text-vice-pink shadow-[0_0_12px_rgba(255,46,136,0.35)]'
           : 'bg-black/60 border-white/20 text-[#b9b4ab] hover:border-white/50 hover:text-white'

@@ -9,6 +9,7 @@ import { AreaName } from './ui/AreaName';
 import { MissionPassed } from './ui/MissionPassed';
 import { EquippedToast } from './ui/EquippedToast';
 import { AriaAnnouncer } from './ui/AriaAnnouncer';
+import { ClickPulse } from './ui/ClickPulse';
 import { BackgroundStage } from './ui/BackgroundStage';
 import { Boot } from './screens/Boot';
 import { getActiveLayer } from './lib/inputLayer';
@@ -49,6 +50,7 @@ const MainLayout: React.FC = () => {
       </Suspense>
       <EquippedToast />
       <AriaAnnouncer />
+      <ClickPulse />
 
       {/* Screen Routes with popLayout: outgoing content fades out (200ms) while new content starts */}
       <Suspense fallback={null}>

@@ -40,7 +40,7 @@ export const ProofBlock: React.FC<ProofBlockProps> = ({
                 key={pid}
                 type="button"
                 onClick={() => onNavProject(pid)}
-                className="px-1.5 py-0.5 rounded bg-[#2ee6c5]/15 hover:bg-[#2ee6c5] hover:text-black border border-[#2ee6c5]/40 text-[#2ee6c5] text-[10px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider transition-colors cursor-pointer"
+                className="px-1.5 py-0.5 rounded bg-[#2ee6c5]/15 hover:bg-[#2ee6c5] hover:text-black border border-[#2ee6c5]/40 text-[#2ee6c5] text-[10px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider transition-colors "
               >
                 {getProjectName(pid)}
               </button>
@@ -57,7 +57,7 @@ export const ProofBlock: React.FC<ProofBlockProps> = ({
           <button
             type="button"
             onClick={onNavJob}
-            className="text-[11px] text-white/90 hover:text-[#8b7bff] font-['Inter'] hover:underline truncate cursor-pointer"
+            className="text-[11px] text-white/90 hover:text-[#8b7bff] font-['Inter'] hover:underline truncate "
           >
             {currentJob}
           </button>
@@ -72,7 +72,7 @@ export const ProofBlock: React.FC<ProofBlockProps> = ({
           <button
             type="button"
             onClick={() => onNavCerts(tree)}
-            className="text-[10.5px] text-white/90 hover:text-[#ffc23d] font-['Inter'] hover:underline truncate cursor-pointer"
+            className="text-[10.5px] text-white/90 hover:text-[#ffc23d] font-['Inter'] hover:underline truncate "
             title={currentProof.certs.join(' · ')}
           >
             {currentProof.certs.length}{' '}

@@ -265,3 +265,42 @@ body {
   }
 }
 
+/* Custom Vice City Cursor (real mice/trackpads only; native on touch & high-contrast) */
+@media (hover: hover) and (pointer: fine) {
+  html, body, * {
+    cursor: url('/cursor/arrow.svg') 2 2, url('/cursor/arrow-32.png') 2 2, auto;
+    cursor: url('/cursor/arrow.svg') 2 2, image-set(url('/cursor/arrow-32.png') 1x, url('/cursor/arrow-64.png') 2x) 2 2, auto;
+  }
+  a, button, [role="button"], summary, label[for], select, .cursor-pointer {
+    cursor: url('/cursor/arrow-hover.svg') 2 2, url('/cursor/arrow-hover-32.png') 2 2, pointer;
+    cursor: url('/cursor/arrow-hover.svg') 2 2, image-set(url('/cursor/arrow-hover-32.png') 1x, url('/cursor/arrow-hover-64.png') 2x) 2 2, pointer;
+  }
+  input, textarea, [contenteditable="true"] { cursor: text; }
+  .cursor-grab { cursor: grab !important; }
+  .cursor-grabbing { cursor: grabbing !important; }
+  [disabled], .cursor-not-allowed { cursor: not-allowed !important; }
+}
+
+@media (forced-colors: active) {
+  html, body, * { cursor: auto !important; }
+}
+
+/* Click Pulse animation */
+@keyframes click-pulse {
+  0% {
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+  }
+  100% {
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+  }
+}
+
+.animate-click-pulse {
+  animation: click-pulse 300ms ease-out forwards;
+}
+
+

@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
         {/* EMAIL */}
         <a
           href={`mailto:${contact.email}`}
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
@@ -70,7 +70,7 @@ export const Contact: React.FC = () => {
           href={contact.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
@@ -92,7 +92,7 @@ export const Contact: React.FC = () => {
         {/* CALL (Label: Call me, DO NOT print phone number) */}
         <a
           href={contact.phoneTel}
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
@@ -116,7 +116,7 @@ export const Contact: React.FC = () => {
           href={contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
@@ -140,7 +140,7 @@ export const Contact: React.FC = () => {
           href={contact.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div
@@ -164,7 +164,7 @@ export const Contact: React.FC = () => {
           href={contact.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 cursor-pointer group"
+          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
           style={{ borderLeft: `4px solid ${ACCENT}` }}
         >
           <div

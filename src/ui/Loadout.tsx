@@ -157,7 +157,7 @@ export const Loadout: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md cursor-pointer"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md "
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               handleClose();
@@ -169,7 +169,7 @@ export const Loadout: React.FC = () => {
             <button
               type="button"
               onClick={toggleSfx}
-              className={`p-2 rounded-full border transition-colors cursor-pointer ${
+              className={`p-2 rounded-full border transition-colors ${
                 sfxOn
                   ? 'border-white/20 bg-black/60 text-[#5fd068]'
                   : 'border-white/10 bg-black/40 text-[#b9b4ab]'
@@ -183,7 +183,7 @@ export const Loadout: React.FC = () => {
               ref={closeButtonRef}
               type="button"
               onClick={handleClose}
-              className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-vice-pink text-white hover:border-vice-pink transition-colors cursor-pointer"
+              className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-vice-pink text-white hover:border-vice-pink transition-colors "
               title="Close Loadout (ESC)"
               aria-label="Close loadout"
             >
@@ -230,7 +230,7 @@ export const Loadout: React.FC = () => {
               <button
                 type="button"
                 onClick={handleClose}
-                className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-vice-pink text-white hover:border-vice-pink transition-colors cursor-pointer shrink-0"
+                className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-vice-pink text-white hover:border-vice-pink transition-colors shrink-0"
                 title="Close Loadout"
                 aria-label="Close loadout"
               >

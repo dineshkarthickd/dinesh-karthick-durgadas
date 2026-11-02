@@ -114,7 +114,7 @@ export const MenuStacked: React.FC<MenuStackedProps> = ({
                   buttonRefs.current[index] = el;
                 }}
                 onClick={() => onSelect(index)}
-                className={`group flex items-center justify-between px-3 transition-colors cursor-pointer h-[44px] text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 active:bg-white/10 ${
+                className={`group flex items-center justify-between px-3 transition-colors h-[44px] text-left w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 active:bg-white/10 ${
                   isTransitioning ? 'text-white' : 'text-white/90'
                 }`}
                 style={{

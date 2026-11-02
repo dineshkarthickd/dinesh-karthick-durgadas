@@ -40,7 +40,7 @@ export const Skills: React.FC = () => {
               onClick={() => toggleRow(index)}
               className={`text-left w-full p-[var(--m-card-pad)] lg:px-3 ${
                 isExpanded ? 'lg:py-2.5' : 'lg:h-[40px] lg:py-2'
-              } flex flex-col justify-center rounded-lg bg-[rgba(10,10,14,0.78)] backdrop-blur-md border transition-all cursor-pointer shadow-[0_4px_16px_rgba(0,0,0,0.3)] ${
+              } flex flex-col justify-center rounded-lg bg-[rgba(10,10,14,0.78)] backdrop-blur-md border transition-all shadow-[0_4px_16px_rgba(0,0,0,0.3)] ${
                 isExpanded
                   ? 'border-[#38d6ff]/60 shadow-[0_4px_20px_rgba(56,214,255,0.25)]'
                   : 'border-white/10 hover:border-white/25'
