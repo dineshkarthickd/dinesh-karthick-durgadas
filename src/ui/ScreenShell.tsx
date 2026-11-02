@@ -148,7 +148,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
               left: 'var(--frame-x)',
               top: 'max(calc(56px + 24px), var(--gutter-y))',
               bottom: 'calc(var(--gutter-y) + 48px)',
-              width: 'min(34vw, 540px)',
+              width: 'var(--panel-width, min(34vw, 540px))',
             }}
           >
             <motion.div
@@ -175,7 +175,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
                 <div className="relative inline-block leading-[0.88]">
                   {Array.isArray(title) ? (
                     <h1
-                      className="font-['Anton'] uppercase text-[clamp(44px,7.5vh,84px)] tracking-tight text-[#f2efe9]"
+                      className="font-['Anton'] uppercase text-[clamp(44px,7.5vh,var(--d-title-max,100px))] tracking-tight text-[#f2efe9]"
                       style={{ textShadow: '0 4px 0 rgba(0,0,0,0.45)', lineHeight: 0.88 }}
                     >
                       <div>{title[0]}</div>
@@ -183,7 +183,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
                     </h1>
                   ) : (
                     <h1
-                      className="font-['Anton'] uppercase text-[clamp(44px,7.5vh,84px)] tracking-tight text-[#f2efe9]"
+                      className="font-['Anton'] uppercase text-[clamp(44px,7.5vh,var(--d-title-max,100px))] tracking-tight text-[#f2efe9]"
                       style={{ textShadow: '0 4px 0 rgba(0,0,0,0.45)', lineHeight: 0.88 }}
                     >
                       {title}
@@ -191,7 +191,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
                   )}
 
                   <div
-                    className="font-['Yellowtail'] text-[clamp(22px,3.8vh,40px)] -rotate-4 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_8px_rgba(0,0,0,0.85)] z-20 pointer-events-none select-none whitespace-nowrap"
+                    className="font-['Yellowtail'] text-[clamp(22px,3.8vh,var(--d-sub-max,48px))] -rotate-4 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_8px_rgba(0,0,0,0.85)] z-20 pointer-events-none select-none whitespace-nowrap"
                     style={{ color: accentColor }}
                   >
                     {subtitle}
@@ -223,7 +223,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
               style={{
                 bottom: 'var(--gutter-y)',
                 left: 'var(--frame-x)',
-                width: 'min(34vw, 540px)',
+                width: 'var(--panel-width, min(34vw, 540px))',
               }}
             >
               <div className="flex items-center gap-4">

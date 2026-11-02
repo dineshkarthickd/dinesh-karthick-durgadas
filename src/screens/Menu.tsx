@@ -124,29 +124,31 @@ export const Menu: React.FC = () => {
               transition={{ duration: 0.25, ease: 'easeOut' }}
               className="flex flex-col justify-center select-none pointer-events-auto"
               style={{
-                width: 'clamp(280px, 22vw, 380px)',
+                width: 'var(--d-menu-w, clamp(280px, 22vw, 440px))',
               }}
             >
               {/* Name & Tagline */}
               <div className="relative inline-block self-start mb-4 leading-[0.88]">
                 <h1
-                  className="font-['Anton'] uppercase text-[clamp(44px,7.5vh,84px)] tracking-tight text-[#f2efe9]"
+                  className="font-['Anton'] uppercase text-[clamp(44px,7.5vh,var(--d-title-max,100px))] tracking-tight text-[#f2efe9]"
                   style={{ textShadow: '0 4px 0 rgba(0,0,0,0.45)', lineHeight: 0.88 }}
                 >
                   <div>{profile.firstName}</div>
                   <div>{profile.lastName}</div>
                 </h1>
-                <div className="font-['Yellowtail'] text-vice-pink text-[clamp(28px,4.5vh,48px)] -rotate-4 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_12px_rgba(255,46,136,0.7)] pointer-events-none whitespace-nowrap">
+                <div
+                  className="font-['Yellowtail'] text-vice-pink text-[clamp(28px,4.5vh,var(--d-sub-max,54px))] -rotate-4 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_12px_rgba(255,46,136,0.7)] pointer-events-none whitespace-nowrap"
+                >
                   Portfolio
                 </div>
               </div>
 
-              <p className="font-['Barlow_Condensed'] font-semibold text-xs tracking-[0.2em] text-[#b9b4ab] uppercase -mt-1 mb-4">
+              <p className="font-['Barlow_Condensed'] font-semibold text-xs 2xl:text-sm tracking-[0.2em] text-[#b9b4ab] uppercase -mt-1 mb-4">
                 {profile.tagline}
               </p>
 
               {/* Menu items list */}
-              <nav aria-label="Main menu" className="flex flex-col gap-1.5 w-full">
+              <nav aria-label="Main menu" className="flex flex-col gap-1.5 2xl:gap-2 w-full">
                 {MENU_ITEMS.map((item, index) => {
                   const isSelected = selectedIndex === index;
                   const isTransitioning = transitioningIndex === index;
@@ -166,7 +168,7 @@ export const Menu: React.FC = () => {
                       }}
                       onMouseEnter={() => handleHighlight(index)}
                       onClick={() => handleSelectItem(index)}
-                      className={`group relative flex items-center justify-between px-3 py-2 rounded text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
+                      className={`group relative flex items-center justify-between rounded text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
                         isSelected
                           ? 'text-white'
                           : 'text-[#f2efe9]/80 hover:text-white bg-black/40 border border-white/5'
@@ -175,6 +177,7 @@ export const Menu: React.FC = () => {
                         backgroundColor: isSelected ? barBgColor : undefined,
                         boxShadow: isSelected ? `0 0 20px ${barBgColor}60` : undefined,
                         transform: 'skewX(-6deg)',
+                        padding: 'var(--d-menu-row-py, 10px) var(--d-menu-row-px, 14px)',
                       }}
                     >
                       <div
@@ -184,9 +187,16 @@ export const Menu: React.FC = () => {
                         <ItemIcon
                           size={16}
                           className={isSelected ? 'text-white' : 'text-[#b9b4ab]'}
-                          style={{ color: isSelected ? '#ffffff' : item.accent }}
+                          style={{
+                            color: isSelected ? '#ffffff' : item.accent,
+                            width: 'var(--d-menu-icon, 16px)',
+                            height: 'var(--d-menu-icon, 16px)',
+                          }}
                         />
-                        <span className="font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wider truncate">
+                        <span
+                          className="font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wider truncate"
+                          style={{ fontSize: 'var(--d-menu-row-text, 18px)' }}
+                        >
                           {item.label}
                         </span>
                       </div>

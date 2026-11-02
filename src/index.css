@@ -66,6 +66,100 @@
   }
 }
 
+/* Phone in landscape: height < 500px */
+@media (orientation: landscape) and (max-height: 500px) {
+  :root {
+    --m-art-band: min(38dvh, 150px);
+    --m-title: 28px;
+    --m-script: 16px;
+    --m-pretitle: 9px;
+  }
+
+  .stacked-title-row {
+    max-height: 56px;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+  }
+
+  .stacked-area-subtitle {
+    display: none !important;
+  }
+
+  .stacked-area-title {
+    font-size: 18px !important;
+  }
+}
+
+/* Desktop layout panel width and size tokens */
+:root {
+  --d-card-pad: 10px 12px;
+  --d-card-icon: 32px;
+  --d-card-title: 12px;
+  --d-card-text: 11.5px;
+  --d-btn-text: 11px;
+  --d-btn-pad: 4px 10px;
+  --d-btn-icon: 12px;
+  --d-menu-w: clamp(280px, 22vw, 440px);
+  --d-preview-w: clamp(300px, 24vw, 420px);
+  --d-menu-row-py: 9px;
+  --d-menu-row-px: 13px;
+  --d-menu-row-text: 18px;
+  --d-menu-icon: 16px;
+  --d-hud-h: 44px;
+  --d-hud-font: 22px;
+  --d-hud-star: 14px;
+  --d-minimap-size: 104px;
+  --d-minimap-b: 24px;
+  --d-minimap-r: 28px;
+  --d-title-max: 100px;
+  --d-sub-max: 54px;
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  :root {
+    --panel-width: min(46vw, 540px);
+  }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  :root {
+    --panel-width: min(34vw, 540px);
+  }
+}
+
+@media (min-width: 2200px) and (orientation: landscape) {
+  :root {
+    --frame-max: 2250px;
+    --gutter-y: clamp(36px, 4.5vh, 64px);
+    --panel-width: min(36vw, 680px);
+    --d-card-pad: 14px 18px;
+    --d-card-icon: 42px;
+    --d-card-title: 15.5px;
+    --d-card-text: 14.5px;
+    --d-btn-text: 14px;
+    --d-btn-pad: 6px 14px;
+    --d-btn-icon: 15px;
+    --d-menu-w: clamp(360px, 22vw, 560px);
+    --d-preview-w: clamp(380px, 24vw, 540px);
+    --d-menu-row-py: 13px;
+    --d-menu-row-px: 18px;
+    --d-menu-row-text: 22px;
+    --d-menu-icon: 20px;
+    --d-hud-h: 54px;
+    --d-hud-font: 28px;
+    --d-hud-star: 18px;
+    --d-minimap-size: 130px;
+    --d-minimap-b: 32px;
+    --d-minimap-r: 36px;
+    --d-title-max: 125px;
+    --d-sub-max: 68px;
+  }
+
+  html {
+    font-size: 125%;
+  }
+}
+
 /* Base styles */
 html, body {
   height: 100%;

@@ -42,165 +42,182 @@ export const Contact: React.FC = () => {
       accentColor={ACCENT}
       sectionId="contact"
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 lg:gap-2">
-        {/* EMAIL */}
-        <a
-          href={`mailto:${contact.email}`}
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
-          style={{ borderLeft: `4px solid ${ACCENT}` }}
-        >
-          <div
-            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
-            style={{ backgroundColor: ACCENT }}
+      <div className="@container">
+        <div className="grid grid-cols-1 @[420px]:grid-cols-2 gap-2.5 lg:gap-2">
+          {/* EMAIL (spans full 2 columns, never truncated) */}
+          <a
+            href={`mailto:${contact.email}`}
+            title={contact.email}
+            aria-label={`Email ${contact.email}`}
+            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group col-span-1 @[420px]:col-span-2"
+            style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
-            <Mail size={16} />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
-              EMAIL
-            </span>
-            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
-              {contact.email}
-            </span>
-          </div>
-        </a>
+            <div
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              style={{ backgroundColor: ACCENT }}
+            >
+              <Mail size={16} />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+                EMAIL
+              </span>
+              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] whitespace-nowrap group-hover:text-white transition-colors">
+                {contact.email}
+              </span>
+            </div>
+          </a>
 
-        {/* WHATSAPP (Label: Chat on WhatsApp, DO NOT print phone number) */}
-        <a
-          href={contact.whatsapp}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
-          style={{ borderLeft: `4px solid ${ACCENT}` }}
-        >
-          <div
-            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
-            style={{ backgroundColor: ACCENT }}
+          {/* WHATSAPP (Label: Chat on WhatsApp, DO NOT print phone number) */}
+          <a
+            href={contact.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Chat on WhatsApp"
+            aria-label="Chat on WhatsApp"
+            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
-            <MessageCircle size={16} />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
-              WHATSAPP
-            </span>
-            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
-              Chat on WhatsApp
-            </span>
-          </div>
-        </a>
+            <div
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              style={{ backgroundColor: ACCENT }}
+            >
+              <MessageCircle size={16} />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+                WHATSAPP
+              </span>
+              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+                Chat on WhatsApp
+              </span>
+            </div>
+          </a>
 
-        {/* CALL (Label: Call me, DO NOT print phone number) */}
-        <a
-          href={contact.phoneTel}
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
-          style={{ borderLeft: `4px solid ${ACCENT}` }}
-        >
-          <div
-            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
-            style={{ backgroundColor: ACCENT }}
+          {/* CALL (Label: Call me, DO NOT print phone number) */}
+          <a
+            href={contact.phoneTel}
+            title="Call me"
+            aria-label="Call Dinesh Karthick"
+            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
-            <Phone size={18} />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
-              CALL
-            </span>
-            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
-              Call me
-            </span>
-          </div>
-        </a>
+            <div
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              style={{ backgroundColor: ACCENT }}
+            >
+              <Phone size={18} />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+                CALL
+              </span>
+              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+                Call me
+              </span>
+            </div>
+          </a>
 
-        {/* LINKEDIN */}
-        <a
-          href={contact.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
-          style={{ borderLeft: `4px solid ${ACCENT}` }}
-        >
-          <div
-            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
-            style={{ backgroundColor: ACCENT }}
+          {/* LINKEDIN */}
+          <a
+            href={contact.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="dinesh-karthick-durgadas"
+            aria-label="LinkedIn: dinesh-karthick-durgadas"
+            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
-            <LinkedinIcon size={18} />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
-              LINKEDIN
-            </span>
-            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
-              dinesh-karthick-durgadas
-            </span>
-          </div>
-        </a>
+            <div
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              style={{ backgroundColor: ACCENT }}
+            >
+              <LinkedinIcon size={18} />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+                LINKEDIN
+              </span>
+              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+                dinesh-karthick-durgadas
+              </span>
+            </div>
+          </a>
 
-        {/* GITHUB */}
-        <a
-          href={contact.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
-          style={{ borderLeft: `4px solid ${ACCENT}` }}
-        >
-          <div
-            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
-            style={{ backgroundColor: ACCENT }}
+          {/* GITHUB */}
+          <a
+            href={contact.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="dineshkarthickd"
+            aria-label="GitHub: dineshkarthickd"
+            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
-            <GithubIcon size={18} />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
-              GITHUB
-            </span>
-            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
-              dineshkarthickd
-            </span>
-          </div>
-        </a>
+            <div
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              style={{ backgroundColor: ACCENT }}
+            >
+              <GithubIcon size={18} />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+                GITHUB
+              </span>
+              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+                dineshkarthickd
+              </span>
+            </div>
+          </a>
 
-        {/* INSTAGRAM */}
-        <a
-          href={contact.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
-          style={{ borderLeft: `4px solid ${ACCENT}` }}
-        >
-          <div
-            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
-            style={{ backgroundColor: ACCENT }}
+          {/* INSTAGRAM */}
+          <a
+            href={contact.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="@dinesh.durgadas"
+            aria-label="Instagram: @dinesh.durgadas"
+            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
-            <InstagramIcon size={18} />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
-              INSTAGRAM
-            </span>
-            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
-              @dinesh.durgadas
-            </span>
-          </div>
-        </a>
+            <div
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              style={{ backgroundColor: ACCENT }}
+            >
+              <InstagramIcon size={18} />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+                INSTAGRAM
+              </span>
+              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+                @dinesh.durgadas
+              </span>
+            </div>
+          </a>
 
-        {/* LOCATION (not a link) */}
-        <div
-          className="p-[var(--m-card-pad)] lg:py-2.5 lg:px-3 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 flex items-center gap-2.5 sm:col-span-2"
-          style={{ borderLeft: `4px solid ${ACCENT}` }}
-        >
+          {/* LOCATION (not a link) */}
           <div
-            className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-7.5 lg:h-7.5 rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
-            style={{ backgroundColor: ACCENT }}
+            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 flex items-center gap-2.5 @[420px]:col-span-2"
+            style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
-            <MapPin size={18} />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
-              LOCATION
-            </span>
-            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words">
-              {contact.location}
-            </span>
+            <div
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              style={{ backgroundColor: ACCENT }}
+            >
+              <MapPin size={18} />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+                LOCATION
+              </span>
+              <span
+                title={contact.location}
+                className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate"
+              >
+                {contact.location}
+              </span>
+            </div>
           </div>
         </div>
       </div>

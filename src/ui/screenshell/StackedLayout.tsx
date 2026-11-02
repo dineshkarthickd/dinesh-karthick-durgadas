@@ -119,7 +119,7 @@ export const StackedLayout: React.FC<StackedLayoutProps> = ({
 
         {/* STICKY TITLE ROW */}
         <div
-          className={`sticky top-0 z-20 transition-all duration-200 bg-[#07060a] ${
+          className={`sticky top-0 z-20 transition-all duration-200 bg-[#07060a] stacked-title-row ${
             isScrolled ? 'border-b border-white/[0.08] shadow-lg' : 'border-b border-transparent'
           }`}
           style={{

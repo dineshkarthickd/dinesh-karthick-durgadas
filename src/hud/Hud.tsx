@@ -108,7 +108,7 @@ export const Hud: React.FC = () => {
           top: '20px',
           left: '28px',
           right: '28px',
-          height: '44px',
+          height: 'var(--d-hud-h, 44px)',
         }}
       >
         {/* Left: Radio pill + SFX toggle */}
@@ -135,15 +135,15 @@ export const Hud: React.FC = () => {
           <Countdown />
         </div>
 
-        {/* Right, one row: Clock (22px) · Money (22px) · Stars (14px, gap 4px) + 3px bar underneath */}
+        {/* Right, one row: Clock · Money · Stars + 3px bar underneath */}
         <div className="flex flex-col items-end pointer-events-auto">
           <div className="flex items-center gap-2.5">
-            <Clock className="font-['Barlow_Condensed'] font-bold text-white text-[22px] tracking-wide leading-none" />
+            <Clock className="font-['Barlow_Condensed'] font-bold text-white tracking-wide leading-none text-[var(--d-hud-font,22px)]" />
             <span className="text-white/30 text-xs">·</span>
             <Money
               showDelta={false}
               className="flex items-center"
-              amountClassName="font-['Barlow_Condensed'] font-bold text-[#5fd068] text-[22px] tracking-wide leading-none"
+              amountClassName="font-['Barlow_Condensed'] font-bold text-[#5fd068] tracking-wide leading-none text-[var(--d-hud-font,22px)]"
             />
             <span className="text-white/30 text-xs">·</span>
             <Stars size={14} gap="gap-1" />
@@ -199,12 +199,12 @@ export const Hud: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom-Right: Minimap at right: 28px; bottom: 24px */}
+      {/* Bottom-Right: Minimap */}
       <div
         className="absolute pointer-events-auto"
         style={{
-          bottom: '24px',
-          right: '28px',
+          bottom: 'var(--d-minimap-b, 24px)',
+          right: 'var(--d-minimap-r, 28px)',
         }}
       >
         <Minimap accentColor={current.accent} />
@@ -284,6 +284,7 @@ export const Hud: React.FC = () => {
               pulseLoadout ? 'animate-pulse ring-2 ring-vice-pink/50' : ''
             }`}
             title="Open Loadout"
+            aria-label="Open tech stack loadout"
           >
             {equipped && loadoutProof[equipped] ? (
               (() => {

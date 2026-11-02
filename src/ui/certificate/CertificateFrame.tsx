@@ -102,7 +102,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
             id="cert-viewer-title"
             className="font-['Anton'] text-base sm:text-xl text-white tracking-wider truncate"
           >
-            TROPHY UNLOCKED
+            <span className="hidden min-[360px]:inline">TROPHY </span>UNLOCKED
           </h2>
           <span className="text-xs sm:text-sm font-['Barlow_Condensed'] font-bold text-[#b9b4ab] shrink-0">
             ({currentIndex + 1} / {totalCerts})

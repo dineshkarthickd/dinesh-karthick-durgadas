@@ -130,10 +130,10 @@ export const Achievements: React.FC = () => {
           <div className="shrink-0 sticky lg:static top-0 bg-[#07060a] z-10 -mt-1 pt-1 pb-2 pr-3 flex flex-col gap-2 border-b border-white/10">
             {/* Header Counter Line */}
             <div className="flex flex-wrap items-center justify-between gap-2 pr-1">
-              <span className="font-['Barlow_Condensed'] font-bold text-xs lg:text-sm uppercase tracking-wider text-white whitespace-nowrap">
+              <span className="font-['Barlow_Condensed'] font-bold text-xs lg:text-sm 2xl:text-base uppercase tracking-wider text-white whitespace-nowrap">
                 {certificates.length} TROPHIES UNLOCKED
               </span>
-              <div className="flex items-center gap-2.5 sm:gap-3 font-['Barlow_Condensed'] font-bold text-xs lg:text-sm text-[#b9b4ab] whitespace-nowrap shrink-0">
+              <div className="flex items-center gap-2.5 sm:gap-3 font-['Barlow_Condensed'] font-bold text-xs lg:text-sm 2xl:text-base text-[#b9b4ab] whitespace-nowrap shrink-0">
                 <span className="flex items-center gap-1 text-[#ffc23d]">🥇 {goldCount}</span>
                 <span>·</span>
                 <span className="flex items-center gap-1 text-[#c9d1d9]">🥈 {silverCount}</span>
@@ -158,7 +158,7 @@ export const Achievements: React.FC = () => {
                           setActiveTab(tab);
                         }
                       }}
-                      className={`px-3 h-[30px] flex items-center justify-center rounded font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider transition-all ${
+                      className={`px-3 2xl:px-4 h-[30px] 2xl:h-[36px] flex items-center justify-center rounded font-['Barlow_Condensed'] font-bold text-xs 2xl:text-sm uppercase tracking-wider transition-all ${
                         isActive
                           ? 'bg-[#e64bff] text-white shadow-[0_2px_10px_rgba(230,75,255,0.4)]'
                           : 'bg-white/5 text-[#b9b4ab] hover:bg-white/10 hover:text-white'
@@ -199,7 +199,7 @@ export const Achievements: React.FC = () => {
               return (
                 <div
                   key={cert.preview}
-                  className={`p-[var(--m-card-pad)] lg:p-[10px_12px] rounded-lg border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 lg:gap-2 ${
+                  className={`p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-lg border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 lg:gap-2.5 ${
                     isMatch
                       ? 'bg-[#38d6ff]/10 border-[#38d6ff]/40 shadow-[0_0_15px_rgba(56,214,255,0.15)]'
                       : 'bg-[#0a0a0e]/90 border-white/10 hover:border-white/20'
@@ -208,7 +208,7 @@ export const Achievements: React.FC = () => {
                   {/* Left: Icon + Info */}
                   <div className="flex items-start gap-3 min-w-0">
                     <div
-                      className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-8 lg:h-8 rounded flex items-center justify-center shrink-0 text-base shadow [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+                      className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,32px)] lg:h-[var(--d-card-icon,32px)] rounded flex items-center justify-center shrink-0 text-base shadow [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[calc(var(--d-card-icon,32px)*0.5)] lg:[&>svg]:h-[calc(var(--d-card-icon,32px)*0.5)]"
                       style={{ backgroundColor: tierInfo.bg, color: tierInfo.text }}
                     >
                       <Trophy size={16} />
@@ -216,15 +216,15 @@ export const Achievements: React.FC = () => {
 
                     <div className="flex flex-col min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[12px] uppercase tracking-wide text-white truncate">
+                        <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,12px)] uppercase tracking-wide text-white truncate">
                           {cert.title}
                         </span>
                       </div>
 
-                      <div className="card-text-mobile lg:text-[11.5px] text-[#b9b4ab] mt-0.5 font-['Inter'] leading-tight sm:flex sm:items-center sm:flex-nowrap min-w-0">
+                      <div className="card-text-mobile lg:text-[var(--d-card-text,11.5px)] text-[#b9b4ab] mt-0.5 font-['Inter'] leading-tight sm:flex sm:items-center sm:flex-nowrap min-w-0">
                         <span className="block sm:inline truncate">{cert.issuer}</span>
                         <span className="hidden sm:inline text-white/20 mx-1.5 shrink-0">·</span>
-                        <span className="block sm:inline font-mono text-[11px] text-neutral-300 whitespace-nowrap shrink-0">{cert.date}</span>
+                        <span className="block sm:inline font-mono text-[11px] lg:text-[calc(var(--d-card-text,11.5px)-0.5px)] text-neutral-300 whitespace-nowrap shrink-0">{cert.date}</span>
                       </div>
                     </div>
                   </div>
@@ -237,9 +237,13 @@ export const Achievements: React.FC = () => {
                         const idx = filteredCerts.findIndex((c) => c.preview === cert.preview);
                         setViewerIndex(idx >= 0 ? idx : 0);
                       }}
-                      className="flex items-center gap-1 px-2.5 py-1 lg:px-2 lg:py-0.5 rounded bg-white/10 hover:bg-[#e64bff] hover:text-white text-[11px] lg:text-[10.5px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-neutral-200 transition-colors "
+                      className="flex items-center gap-1 px-2.5 py-1 rounded bg-white/10 hover:bg-[#e64bff] hover:text-white text-[11px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-neutral-200 transition-colors"
+                      style={{
+                        padding: 'var(--d-btn-pad, 4px 10px)',
+                        fontSize: 'var(--d-btn-text, 11px)',
+                      }}
                     >
-                      <FileText size={12} />
+                      <FileText size={12} style={{ width: 'var(--d-btn-icon, 12px)', height: 'var(--d-btn-icon, 12px)' }} />
                       VIEW
                     </button>
 
@@ -249,8 +253,12 @@ export const Achievements: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#5fd068]/20 hover:bg-[#5fd068] text-[#5fd068] hover:text-black text-[11px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider transition-colors border border-[#5fd068]/40"
+                        style={{
+                          padding: 'var(--d-btn-pad, 4px 10px)',
+                          fontSize: 'var(--d-btn-text, 11px)',
+                        }}
                       >
-                        <CheckCircle2 size={12} />
+                        <CheckCircle2 size={12} style={{ width: 'var(--d-btn-icon, 12px)', height: 'var(--d-btn-icon, 12px)' }} />
                         VERIFY
                       </a>
                     )}

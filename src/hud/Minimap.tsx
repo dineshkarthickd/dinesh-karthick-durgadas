@@ -7,7 +7,13 @@ interface MinimapProps {
 
 export const Minimap: React.FC<MinimapProps> = ({ accentColor }) => {
   return (
-    <div className="relative w-[104px] h-[104px] rounded-xl overflow-hidden border-2 border-white/20 shadow-[0_4px_24px_rgba(0,0,0,0.8)] bg-[#12131a] select-none">
+    <div
+      className="relative rounded-xl overflow-hidden border-2 border-white/20 shadow-[0_4px_24px_rgba(0,0,0,0.8)] bg-[#12131a] select-none"
+      style={{
+        width: 'var(--d-minimap-size, 104px)',
+        height: 'var(--d-minimap-size, 104px)',
+      }}
+    >
       {/* Ocean / water zone */}
       <div className="absolute inset-y-0 right-0 w-[42px] bg-[#1a3852]/60 border-l border-[#38d6ff]/20" />
 

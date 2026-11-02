@@ -86,13 +86,13 @@ export const StackedAreaName: React.FC<{ path: string }> = ({ path }) => {
         className="flex flex-col"
       >
         <h2
-          className="font-['Anton'] italic text-[24px] sm:text-[30px] tracking-wider text-white uppercase leading-none drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)] whitespace-nowrap pr-[0.2em]"
+          className="font-['Anton'] italic text-[24px] sm:text-[30px] tracking-wider text-white uppercase leading-none drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)] whitespace-nowrap pr-[0.2em] stacked-area-title"
           style={{ textShadow: '2px 2px 0 #000' }}
         >
           {info.name}
         </h2>
         {info.district && (
-          <span className="font-['Barlow_Condensed'] font-bold text-[11px] sm:text-[13px] tracking-[0.2em] text-[#b9b4ab] uppercase mt-0.5 drop-shadow-md pr-[0.15em]">
+          <span className="font-['Barlow_Condensed'] font-bold text-[11px] sm:text-[13px] tracking-[0.2em] text-[#b9b4ab] uppercase mt-0.5 drop-shadow-md pr-[0.15em] stacked-area-subtitle">
             · {info.district} ·
           </span>
         )}

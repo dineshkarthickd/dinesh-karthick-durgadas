@@ -29,18 +29,18 @@ export const MenuPreviewCard: React.FC<MenuPreviewCardProps> = ({
           className="p-5 rounded-r-xl bg-[rgba(10,10,14,0.76)] backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex flex-col gap-3 select-none"
           style={{
             borderLeft: `4px solid ${selectedItem.accent}`,
-            width: 'clamp(300px, 24vw, 420px)',
+            width: 'var(--d-preview-w, clamp(300px, 24vw, 420px))',
           }}
         >
           <div className="flex items-center justify-between gap-2">
             <span
-              className="font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-[0.2em]"
+              className="font-['Barlow_Condensed'] font-bold text-xs 2xl:text-sm uppercase tracking-[0.2em]"
               style={{ color: selectedItem.accent }}
             >
               {selectedItem.badge}
             </span>
             {isSelectedVisited && (
-              <span className="flex items-center gap-1 px-2 py-0.5 rounded bg-[#5fd068]/15 border border-[#5fd068]/50 text-[#5fd068] font-['Barlow_Condensed'] font-bold text-[11px] uppercase tracking-wider">
+              <span className="flex items-center gap-1 px-2 py-0.5 rounded bg-[#5fd068]/15 border border-[#5fd068]/50 text-[#5fd068] font-['Barlow_Condensed'] font-bold text-[11px] 2xl:text-xs uppercase tracking-wider">
                 COMPLETED ✓
               </span>
             )}
@@ -61,15 +61,15 @@ export const MenuPreviewCard: React.FC<MenuPreviewCardProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
           </div>
 
-          <p className="font-['Inter'] text-[13px] sm:text-[14px] text-white/90 leading-snug line-clamp-2">
+          <p className="font-['Inter'] text-sm 2xl:text-base text-white/90 leading-snug line-clamp-2">
             "{selectedItem.teaser}"
           </p>
 
           <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-2">
-            <span className="font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider text-[#b9b4ab] shrink-0">
+            <span className="font-['Barlow_Condensed'] font-bold text-xs 2xl:text-sm uppercase tracking-wider text-[#b9b4ab] shrink-0">
               INTEL
             </span>
-            <span className="font-['Barlow_Condensed'] font-bold text-sm tracking-wide text-white text-right truncate">
+            <span className="font-['Barlow_Condensed'] font-bold text-sm 2xl:text-base tracking-wide text-white text-right truncate">
               {selectedItem.stats}
             </span>
           </div>
