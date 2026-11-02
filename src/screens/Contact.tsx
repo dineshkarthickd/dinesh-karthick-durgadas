@@ -56,10 +56,10 @@ export const Contact: React.FC = () => {
             <Mail size={16} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
               EMAIL
             </span>
-            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
+            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               {contact.email}
             </span>
           </div>
@@ -80,10 +80,10 @@ export const Contact: React.FC = () => {
             <MessageCircle size={16} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
               WHATSAPP
             </span>
-            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
+            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               Chat on WhatsApp
             </span>
           </div>
@@ -102,10 +102,10 @@ export const Contact: React.FC = () => {
             <Phone size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
               CALL
             </span>
-            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
+            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               Call me
             </span>
           </div>
@@ -126,10 +126,10 @@ export const Contact: React.FC = () => {
             <LinkedinIcon size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
               LINKEDIN
             </span>
-            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
+            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               dinesh-karthick-durgadas
             </span>
           </div>
@@ -150,10 +150,10 @@ export const Contact: React.FC = () => {
             <GithubIcon size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
               GITHUB
             </span>
-            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
+            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               dineshkarthickd
             </span>
           </div>
@@ -174,10 +174,10 @@ export const Contact: React.FC = () => {
             <InstagramIcon size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
               INSTAGRAM
             </span>
-            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
+            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words group-hover:text-white transition-colors">
               @dinesh.durgadas
             </span>
           </div>
@@ -195,10 +195,10 @@ export const Contact: React.FC = () => {
             <MapPin size={18} />
           </div>
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[11.5px] uppercase tracking-wider text-white">
+            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11.5px] uppercase tracking-wider text-white">
               LOCATION
             </span>
-            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] break-words">
+            <span className="font-['Inter'] card-text-mobile lg:text-[12.5px] text-[#b9b4ab] break-words">
               {contact.location}
             </span>
           </div>

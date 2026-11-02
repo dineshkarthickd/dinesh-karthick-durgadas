@@ -142,7 +142,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
             className="panel-scroll absolute overflow-y-auto overscroll-contain z-10 flex flex-col"
             style={{
               left: 'var(--frame-x)',
-              top: 'var(--gutter-y)',
+              top: 'max(calc(56px + 24px), var(--gutter-y))',
               bottom: 'calc(var(--gutter-y) + 48px)',
               width: 'min(34vw, 540px)',
             }}
@@ -252,7 +252,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
                   }}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
-                  <span className="text-[#ff2e88]">ESC</span> — MENU
+                  <span className="text-vice-pink">ESC</span> — MENU
                 </button>
                 <button
                   type="button"

@@ -29,10 +29,10 @@ export const InfoCard: React.FC<InfoCardProps> = ({
       )}
 
       <div className="flex flex-col min-w-0">
-        <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[13px] uppercase tracking-wider text-white/90 leading-tight">
+        <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[13px] uppercase tracking-wider text-white/90 leading-tight">
           {label}
         </span>
-        <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[14px] text-[#b9b4ab] mt-0.5 leading-snug break-words">
+        <span className="font-['Inter'] card-text-mobile lg:text-[14px] text-[#b9b4ab] mt-0.5 leading-snug break-words">
           {value}
         </span>
       </div>

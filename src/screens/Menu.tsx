@@ -97,24 +97,6 @@ export const Menu: React.FC = () => {
       e.preventDefault();
       handleSelectItem(selectedIndex);
     },
-    q: (e) => {
-      e.preventDefault();
-      haptic(10);
-      playSelectSound();
-      toggleLoadout();
-    },
-    Q: (e) => {
-      e.preventDefault();
-      haptic(10);
-      playSelectSound();
-      toggleLoadout();
-    },
-    Tab: (e) => {
-      e.preventDefault();
-      haptic(10);
-      playSelectSound();
-      toggleLoadout();
-    },
   });
 
   return (
@@ -154,7 +136,7 @@ export const Menu: React.FC = () => {
                   <div>{profile.firstName}</div>
                   <div>{profile.lastName}</div>
                 </h1>
-                <div className="font-['Yellowtail'] text-[#ff2e88] text-[clamp(28px,4.5vh,48px)] -rotate-4 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_12px_rgba(255,46,136,0.7)] pointer-events-none whitespace-nowrap">
+                <div className="font-['Yellowtail'] text-vice-pink text-[clamp(28px,4.5vh,48px)] -rotate-4 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_12px_rgba(255,46,136,0.7)] pointer-events-none whitespace-nowrap">
                   Portfolio
                 </div>
               </div>
@@ -170,7 +152,7 @@ export const Menu: React.FC = () => {
                   const isTransitioning = transitioningIndex === index;
                   const isVisited = item.sectionId ? visited.has(item.sectionId) : false;
                   const ItemIcon = item.icon;
-                  const barBgColor = isTransitioning ? item.accent : '#ff2e88';
+                  const barBgColor = isTransitioning ? item.accent : 'var(--color-vice-pink)';
 
                   return (
                     <button

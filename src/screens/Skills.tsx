@@ -48,7 +48,7 @@ export const Skills: React.FC = () => {
             >
               {/* Row Header: Name, Progress Bar, Percentage, Chevron (40px tall, 14px labels, bar 6px on desktop) */}
               <div className="flex items-center gap-2.5 sm:gap-3">
-                <span className="font-['Barlow_Condensed'] font-semibold text-[var(--m-card-title)] lg:text-[14px] uppercase tracking-wider text-white w-28 sm:w-32 lg:w-28 shrink-0 truncate">
+                <span className="font-['Barlow_Condensed'] font-semibold card-title-mobile lg:text-[14px] uppercase tracking-wider text-white w-28 sm:w-32 lg:w-28 shrink-0 truncate">
                   {skill.tree}
                 </span>
 
@@ -65,7 +65,7 @@ export const Skills: React.FC = () => {
                   />
                 </div>
 
-                <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[13px] text-[#38d6ff] w-8 text-right shrink-0">
+                <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[13px] text-[#38d6ff] w-8 text-right shrink-0">
                   {skill.level}%
                 </span>
 

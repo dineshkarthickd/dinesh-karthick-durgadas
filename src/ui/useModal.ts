@@ -39,7 +39,6 @@ export interface UseModalOptions {
   initialFocusRef?: React.RefObject<HTMLElement | null>;
   returnFocusRef?: React.RefObject<HTMLElement | null>;
   onClose?: () => void;
-  trapTab?: boolean;
   setInert?: boolean;
 }
 
@@ -49,7 +48,6 @@ export function useModal({
   initialFocusRef,
   returnFocusRef,
   onClose,
-  trapTab = true,
   setInert = true,
 }: UseModalOptions) {
   const previousActiveElementRef = useRef<HTMLElement | null>(null);
@@ -123,17 +121,13 @@ export function useModal({
       }
     };
 
-    if (trapTab) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
+    window.addEventListener('keydown', handleKeyDown);
 
     const returnFocusEl = returnFocusRef?.current;
 
     return () => {
       cancelAnimationFrame(focusTimer);
-      if (trapTab) {
-        window.removeEventListener('keydown', handleKeyDown);
-      }
+      window.removeEventListener('keydown', handleKeyDown);
       if (setInert) {
         setRootInert(false);
       }
@@ -155,5 +149,5 @@ export function useModal({
         }
       }, 0);
     };
-  }, [isOpen, containerRef, initialFocusRef, returnFocusRef, trapTab, setInert]);
+  }, [isOpen, containerRef, initialFocusRef, returnFocusRef, setInert]);
 }

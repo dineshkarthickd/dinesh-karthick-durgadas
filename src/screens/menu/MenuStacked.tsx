@@ -70,7 +70,7 @@ export const MenuStacked: React.FC<MenuStackedProps> = ({
                 <div>{profile.lastName}</div>
               </h1>
               <div
-                className="font-['Yellowtail'] text-[#ff2e88] -rotate-4 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_10px_rgba(255,46,136,0.6)] pointer-events-none whitespace-nowrap"
+                className="font-['Yellowtail'] text-vice-pink -rotate-4 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_10px_rgba(255,46,136,0.6)] pointer-events-none whitespace-nowrap"
                 style={{ fontSize: 'var(--m-script)' }}
               >
                 Portfolio
@@ -104,7 +104,7 @@ export const MenuStacked: React.FC<MenuStackedProps> = ({
             const isTransitioning = transitioningIndex === index;
             const isVisited = item.sectionId ? visited.has(item.sectionId) : false;
             const ItemIcon = item.icon;
-            const barBgColor = item.accent || '#ff2e88';
+            const barBgColor = item.accent || 'var(--color-vice-pink)';
 
             return (
               <button

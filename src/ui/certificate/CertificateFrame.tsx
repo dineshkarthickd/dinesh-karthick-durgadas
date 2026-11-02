@@ -127,7 +127,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
             type="button"
             onClick={onClose}
             aria-label="Close certificate viewer"
-            className="p-1.5 sm:p-2 rounded bg-white/10 hover:bg-[#ff2e88] hover:text-white text-[#b9b4ab] transition-colors cursor-pointer"
+            className="p-1.5 sm:p-2 rounded bg-white/10 hover:bg-vice-pink hover:text-white text-[#b9b4ab] transition-colors cursor-pointer"
             title="Close (ESC)"
           >
             <X size={18} />
@@ -290,7 +290,7 @@ export const CertificateFrame: React.FC<CertificateFrameProps> = ({
           <button
             type="button"
             onClick={onClose}
-            className="flex items-center gap-1 px-3 py-1.5 rounded bg-white/10 hover:bg-[#ff2e88] hover:text-white font-['Barlow_Condensed'] font-bold text-xs sm:text-sm uppercase tracking-wider text-neutral-300 transition-colors cursor-pointer"
+            className="flex items-center gap-1 px-3 py-1.5 rounded bg-white/10 hover:bg-vice-pink hover:text-white font-['Barlow_Condensed'] font-bold text-xs sm:text-sm uppercase tracking-wider text-neutral-300 transition-colors cursor-pointer"
           >
             <span>CLOSE</span>
             <span className="hidden lg:inline"> (ESC)</span>

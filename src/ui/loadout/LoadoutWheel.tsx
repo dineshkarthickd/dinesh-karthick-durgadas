@@ -89,7 +89,7 @@ export const LoadoutWheel: React.FC<LoadoutWheelProps> = ({
             onClick={() => onSelectIndex(idx)}
             className={`absolute flex flex-col items-center justify-center w-20 h-20 -ml-10 -mt-10 rounded-xl transition-all duration-200 cursor-pointer ${
               isSelected
-                ? 'bg-[#0a0a0e] border-2 border-[#ff2e88] shadow-[0_0_25px_rgba(255,46,136,0.6)] scale-110 z-20 text-white'
+                ? 'bg-[#0a0a0e] border-2 border-vice-pink shadow-[0_0_25px_rgba(255,46,136,0.6)] scale-110 z-20 text-white'
                 : 'bg-black/70 border border-white/15 text-[#b9b4ab] hover:border-white/40 hover:text-white hover:scale-105 z-10'
             }`}
             style={{
@@ -97,7 +97,7 @@ export const LoadoutWheel: React.FC<LoadoutWheelProps> = ({
             }}
             title={`${skill.tree} (${skill.level}%)`}
           >
-            <IconComponent size={24} className={isSelected ? 'text-[#ff2e88]' : ''} />
+            <IconComponent size={24} className={isSelected ? 'text-vice-pink' : ''} />
             <span className="font-['Barlow_Condensed'] font-bold text-[11px] uppercase tracking-wider mt-1 text-center leading-tight max-w-[72px] truncate">
               {proof.short || skill.tree}
             </span>

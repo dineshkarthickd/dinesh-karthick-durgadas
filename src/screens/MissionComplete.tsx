@@ -5,7 +5,7 @@ import { PrimaryButton } from '../ui/PrimaryButton';
 import { useProgress } from '../game/GameContext';
 import { TOTAL_SECTIONS } from '../data/routes';
 
-const ACCENT = '#ff2e88';
+const ACCENT = 'var(--color-vice-pink)';
 
 const TimePlayed: React.FC<{ startedAt: number }> = ({ startedAt }) => {
   const [seconds, setSeconds] = useState<number>(() =>

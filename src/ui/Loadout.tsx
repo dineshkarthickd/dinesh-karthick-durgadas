@@ -66,7 +66,6 @@ export const Loadout: React.FC = () => {
     initialFocusRef: closeButtonRef,
     onClose: handleClose,
     setInert: false,
-    trapTab: false,
   });
 
   // Close the wheel on route change
@@ -184,7 +183,7 @@ export const Loadout: React.FC = () => {
               ref={closeButtonRef}
               type="button"
               onClick={handleClose}
-              className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-[#ff2e88] text-white hover:border-[#ff2e88] transition-colors cursor-pointer"
+              className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-vice-pink text-white hover:border-vice-pink transition-colors cursor-pointer"
               title="Close Loadout (ESC)"
               aria-label="Close loadout"
             >
@@ -231,7 +230,7 @@ export const Loadout: React.FC = () => {
               <button
                 type="button"
                 onClick={handleClose}
-                className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-[#ff2e88] text-white hover:border-[#ff2e88] transition-colors cursor-pointer shrink-0"
+                className="p-2 rounded-full border border-white/20 bg-black/60 hover:bg-vice-pink text-white hover:border-vice-pink transition-colors cursor-pointer shrink-0"
                 title="Close Loadout"
                 aria-label="Close loadout"
               >

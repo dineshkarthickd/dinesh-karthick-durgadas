@@ -30,7 +30,7 @@ export const Academy: React.FC = () => {
             <div className="flex items-center justify-between gap-2">
               <div className="flex items-center gap-2">
                 <GraduationCap size={18} className="text-[#ff4d5e] shrink-0" />
-                <h3 className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[16px] uppercase tracking-wide text-white">
+                <h3 className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[16px] uppercase tracking-wide text-white">
                   {item.degree}
                 </h3>
               </div>
@@ -42,7 +42,7 @@ export const Academy: React.FC = () => {
               )}
             </div>
 
-            <div className="mt-1 flex flex-wrap items-center justify-between text-[var(--m-card-text)] text-[#b9b4ab] font-['Inter']">
+            <div className="mt-1 flex flex-wrap items-center justify-between card-text-mobile lg:text-xs text-[#b9b4ab] font-['Inter']">
               <span>{item.institution}</span>
               <span className="font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-[#f2efe9]">
                 {item.years}
@@ -59,7 +59,7 @@ export const Academy: React.FC = () => {
           <div className="font-['Anton'] text-2xl sm:text-3xl lg:text-[22px] text-[#ff4d5e] leading-none">
             19+
           </div>
-          <div className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] uppercase tracking-wider text-[#b9b4ab] mt-1">
+          <div className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11px] uppercase tracking-wider text-[#b9b4ab] mt-1">
             CERTIFICATES
           </div>
         </div>
@@ -69,7 +69,7 @@ export const Academy: React.FC = () => {
           <div className="font-['Anton'] text-2xl sm:text-3xl lg:text-[22px] text-[#ff4d5e] leading-none">
             2
           </div>
-          <div className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] uppercase tracking-wider text-[#b9b4ab] mt-1">
+          <div className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11px] uppercase tracking-wider text-[#b9b4ab] mt-1">
             DEGREES
           </div>
         </div>
@@ -79,7 +79,7 @@ export const Academy: React.FC = () => {
           <div className="font-['Anton'] text-2xl sm:text-3xl lg:text-[22px] text-[#ff4d5e] leading-none">
             4
           </div>
-          <div className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] uppercase tracking-wider text-[#b9b4ab] mt-1">
+          <div className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[11px] uppercase tracking-wider text-[#b9b4ab] mt-1">
             LIVE PROJECTS
           </div>
         </div>

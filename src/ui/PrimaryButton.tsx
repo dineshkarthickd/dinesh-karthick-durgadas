@@ -16,7 +16,7 @@ interface PrimaryButtonProps {
 
 export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   children,
-  accentColor = '#ff2e88',
+  accentColor = 'var(--color-vice-pink)',
   onClick,
   href,
   target,

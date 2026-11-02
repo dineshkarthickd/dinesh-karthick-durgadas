@@ -127,7 +127,7 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
             DINESH KARTHICK
           </h1>
           <span
-            className="font-['Yellowtail'] text-[#ff2e88] text-[34px] sm:text-[52px] -rotate-6 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_12px_rgba(255,46,136,0.6)] whitespace-nowrap"
+            className="font-['Yellowtail'] text-vice-pink text-[34px] sm:text-[52px] -rotate-6 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_12px_rgba(255,46,136,0.6)] whitespace-nowrap"
           >
             Portfolio
           </span>
@@ -136,7 +136,7 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
         {/* Loading Progress Bar */}
         <div className="w-64 sm:w-80 h-1.5 bg-white/10 rounded-full mt-10 overflow-hidden relative border border-white/5">
           <div
-            className="h-full bg-gradient-to-r from-[#ff2e88] to-[#ff8a3d] transition-all duration-100 ease-out"
+            className="h-full bg-gradient-to-r from-vice-pink to-[#ff8a3d] transition-all duration-100 ease-out"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -147,7 +147,7 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
             <motion.div
               animate={{ opacity: [0.3, 1, 0.3] }}
               transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-              className="font-['Barlow_Condensed'] font-bold text-lg sm:text-xl uppercase tracking-[0.2em] text-[#ff2e88] cursor-pointer"
+              className="font-['Barlow_Condensed'] font-bold text-lg sm:text-xl uppercase tracking-[0.2em] text-vice-pink cursor-pointer"
             >
               PRESS ANY KEY / TAP TO START
             </motion.div>
@@ -174,7 +174,7 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
         </div>
 
         <div className="flex items-center gap-2 text-[#b9b4ab]">
-          <Loader2 className="w-4 h-4 animate-spin text-[#ff2e88]" />
+          <Loader2 className="w-4 h-4 animate-spin text-vice-pink" />
           <span className="font-['Barlow_Condensed'] text-[11px] uppercase tracking-wider hidden sm:inline">
             LOADING GAME DATA
           </span>

@@ -176,7 +176,7 @@ export const Achievements: React.FC = () => {
         </div>
 
         {/* Certificates List */}
-        <div ref={achievementsListRef} className="space-y-2.5 my-2 pr-1">
+        <div ref={achievementsListRef} className="space-y-2 lg:space-y-1.5 my-2 pr-1">
           {filteredCerts.map((cert) => {
             const tierInfo = TIER_COLORS[cert.tier];
             const isMatch = matchingCertTitles ? matchingCertTitles.has(cert.title) : false;
@@ -184,7 +184,7 @@ export const Achievements: React.FC = () => {
             return (
               <div
                 key={cert.preview}
-                className={`p-[var(--m-card-pad)] rounded-lg border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
+                className={`p-[var(--m-card-pad)] lg:p-[10px_12px] rounded-lg border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 lg:gap-2 ${
                   isMatch
                     ? 'bg-[#38d6ff]/10 border-[#38d6ff]/40 shadow-[0_0_15px_rgba(56,214,255,0.15)]'
                     : 'bg-[#0a0a0e]/90 border-white/10 hover:border-white/20'
@@ -201,15 +201,15 @@ export const Achievements: React.FC = () => {
 
                   <div className="flex flex-col min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-base uppercase tracking-wide text-white truncate">
+                      <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[12px] uppercase tracking-wide text-white truncate">
                         {cert.title}
                       </span>
                     </div>
 
-                    <div className="flex flex-wrap items-center gap-1.5 text-[var(--m-card-text)] text-[#b9b4ab] mt-0.5 font-['Inter']">
-                      <span>{cert.issuer}</span>
-                      <span className="text-white/20">·</span>
-                      <span className="font-mono text-[11px] text-neutral-300">{cert.date}</span>
+                    <div className="card-text-mobile lg:text-[11.5px] text-[#b9b4ab] mt-0.5 font-['Inter'] leading-tight sm:flex sm:items-center sm:flex-nowrap min-w-0">
+                      <span className="block sm:inline truncate">{cert.issuer}</span>
+                      <span className="hidden sm:inline text-white/20 mx-1.5 shrink-0">·</span>
+                      <span className="block sm:inline font-mono text-[11px] text-neutral-300 whitespace-nowrap shrink-0">{cert.date}</span>
                     </div>
                   </div>
                 </div>

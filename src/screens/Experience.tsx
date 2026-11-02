@@ -48,7 +48,7 @@ export const Experience: React.FC = () => {
               </h2>
 
               {/* Bullet Points */}
-              <ul className="mt-2 space-y-1.5 font-['Inter'] text-[var(--m-card-text)] lg:text-[13.5px] text-[#f2efe9]/85 leading-snug list-disc list-inside marker:text-[#8b7bff]">
+              <ul className="mt-2 space-y-1.5 font-['Inter'] card-text-mobile lg:text-[13.5px] text-[#f2efe9]/85 leading-snug list-disc list-inside marker:text-[#8b7bff]">
                 {item.points.map((pt, idx) => (
                   <li key={idx} className="pl-1">
                     {pt}
@@ -65,7 +65,7 @@ export const Experience: React.FC = () => {
         className="mt-2.5 p-[var(--m-card-pad)] lg:py-2.5 lg:px-3.5 rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10"
         style={{ borderLeft: `4px solid ${ACCENT}` }}
       >
-        <p className="font-['Inter'] italic text-[var(--m-card-text)] lg:text-[12.5px] text-[#b9b4ab] leading-relaxed">
+        <p className="font-['Inter'] italic card-text-mobile lg:text-[12.5px] text-[#b9b4ab] leading-relaxed">
           "{ownWords}"
         </p>
       </div>

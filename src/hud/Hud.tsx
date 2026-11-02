@@ -176,8 +176,8 @@ export const Hud: React.FC = () => {
               <button
                 type="button"
                 onClick={handleOpenLoadout}
-                className="flex items-center gap-1 ml-1 px-2 py-0.5 rounded bg-white/5 border border-white/20 text-[#b9b4ab] hover:text-white hover:border-[#ff2e88] font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider backdrop-blur-sm cursor-pointer transition-colors"
-                title="Open Tech Stack Loadout (TAB)"
+                className="flex items-center gap-1 ml-1 px-2 py-0.5 rounded bg-white/5 border border-white/20 text-[#b9b4ab] hover:text-white hover:border-vice-pink font-['Barlow_Condensed'] font-bold text-xs uppercase tracking-wider backdrop-blur-sm cursor-pointer transition-colors"
+                title="Open Tech Stack Loadout (Q)"
               >
                 <Crosshair size={12} />
                 <span>LOADOUT</span>
@@ -223,16 +223,16 @@ export const Hud: React.FC = () => {
             <button
               type="button"
               onClick={handleBackToMenu}
-              className="flex items-center gap-1.5 py-1 px-2 -ml-1 rounded border border-white/10 bg-black/40 text-[#b9b4ab] hover:text-white hover:border-[#ff2e88] transition-colors cursor-pointer text-xs font-['Barlow_Condensed'] font-bold uppercase tracking-wider"
+              className="flex items-center gap-1.5 py-1 px-2 -ml-1 rounded border border-white/10 bg-black/40 text-[#b9b4ab] hover:text-white hover:border-vice-pink transition-colors cursor-pointer text-xs font-['Barlow_Condensed'] font-bold uppercase tracking-wider"
               title="Return to Main Menu"
             >
-              <Gamepad2 size={16} className="text-[#ff2e88]" />
+              <Gamepad2 size={16} className="text-vice-pink" />
               <span>MENU</span>
             </button>
           ) : (
             <div className="flex items-center gap-1.5 text-xs font-['Barlow_Condensed'] font-bold tracking-wider text-white">
-              <span className="w-2 h-2 rounded-full bg-[#ff2e88] animate-ping" />
-              <span className="text-[#ff2e88] tracking-widest uppercase">PORTFOLIO</span>
+              <span className="w-2 h-2 rounded-full bg-vice-pink animate-ping" />
+              <span className="text-vice-pink tracking-widest uppercase">PORTFOLIO</span>
             </div>
           )}
 
@@ -279,9 +279,9 @@ export const Hud: React.FC = () => {
             className={`relative flex flex-col items-center justify-center w-8 h-8 rounded border transition-all cursor-pointer ${
               equipped
                 ? 'bg-[#38d6ff]/20 border-[#38d6ff] text-[#38d6ff]'
-                : 'bg-white/5 border-white/20 text-white hover:border-[#ff2e88]'
+                : 'bg-white/5 border-white/20 text-white hover:border-vice-pink'
             } ${
-              pulseLoadout ? 'animate-pulse ring-2 ring-[#ff2e88]/50' : ''
+              pulseLoadout ? 'animate-pulse ring-2 ring-vice-pink/50' : ''
             }`}
             title="Open Loadout"
           >
@@ -303,10 +303,10 @@ export const Hud: React.FC = () => {
             <button
               type="button"
               onClick={handleOpenLoadout}
-              className="absolute right-0 top-12 z-50 bg-[#ff2e88] text-white px-2.5 py-1 rounded text-[11px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider whitespace-nowrap shadow-xl animate-bounce cursor-pointer flex items-center gap-1 border-0"
+              className="absolute right-0 top-12 z-50 bg-vice-pink text-white px-2.5 py-1 rounded text-[11px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider whitespace-nowrap shadow-xl animate-bounce cursor-pointer flex items-center gap-1 border-0"
             >
               <span>Tap to see my tech stack</span>
-              <span className="absolute -top-1.5 right-3.5 w-3 h-3 bg-[#ff2e88] rotate-45 pointer-events-none" />
+              <span className="absolute -top-1.5 right-3.5 w-3 h-3 bg-vice-pink rotate-45 pointer-events-none" />
             </button>
           )}
         </div>

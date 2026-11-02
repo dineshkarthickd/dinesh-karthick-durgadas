@@ -60,10 +60,10 @@ export const About: React.FC = () => {
           </div>
 
           <div className="flex flex-col min-w-0">
-            <span className="font-['Barlow_Condensed'] font-bold text-[var(--m-card-title)] lg:text-[13px] uppercase tracking-wider text-[#ff8a3d]">
+            <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[13px] uppercase tracking-wider text-[#ff8a3d]">
               CURRENT QUEST
             </span>
-            <span className="font-['Inter'] text-[var(--m-card-text)] lg:text-[14px] text-[#f2efe9] mt-0.5 leading-snug">
+            <span className="font-['Inter'] card-text-mobile lg:text-[14px] text-[#f2efe9] mt-0.5 leading-snug">
               {profile.currentQuest} · <span className="text-[#b9b4ab]">In progress</span>
             </span>
           </div>

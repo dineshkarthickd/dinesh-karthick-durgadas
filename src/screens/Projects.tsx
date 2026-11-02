@@ -123,10 +123,12 @@ export const Projects: React.FC = () => {
             const isMatch = matchingProjectIds ? matchingProjectIds.has(project.id) : true;
 
             return (
-              <div
+              <button
+                type="button"
                 key={project.id}
                 onClick={() => handleOpenProject(project)}
-                className={`p-[var(--m-card-pad)] lg:p-4 rounded-xl border bg-[#0a0a0e]/85 backdrop-blur-md flex flex-col justify-between transition-all duration-200 cursor-pointer ${
+                aria-label={`Open mission briefing: ${project.name}`}
+                className={`text-left w-full p-[var(--m-card-pad)] lg:p-4 rounded-xl border bg-[#0a0a0e]/85 backdrop-blur-md flex flex-col justify-between transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2ee6c5] ${
                   isMatch
                     ? 'border-white/10 hover:border-[#2ee6c5] hover:shadow-[0_0_20px_rgba(46,230,197,0.3)]'
                     : 'opacity-35 grayscale border-white/5 hover:opacity-75'
@@ -174,7 +176,7 @@ export const Projects: React.FC = () => {
                     BRIEFING →
                   </span>
                 </div>
-              </div>
+              </button>
             );
           })}
         </div>

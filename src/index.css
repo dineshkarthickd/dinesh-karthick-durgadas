@@ -244,6 +244,16 @@ body {
   transform: skewX(6deg);
 }
 
+/* Card size utility classes for mobile stacked layout */
+.card-title-mobile {
+  font-size: var(--m-card-title);
+}
+
+.card-text-mobile {
+  font-size: var(--m-card-text);
+  color: #b9b4ab;
+}
+
 /* Certificate viewer print protection */
 @media print {
   .cert-viewer,

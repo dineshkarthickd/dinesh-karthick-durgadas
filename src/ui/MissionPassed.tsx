@@ -158,8 +158,8 @@ export const MissionPassed: React.FC = () => {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-50 flex flex-col items-center justify-center pointer-events-none select-none bg-black/40 backdrop-blur-sm"
           >
-            <div className="relative flex flex-col items-center px-8 py-6 rounded-2xl bg-[#07060a]/90 border-2 border-[#ff2e88] shadow-[0_0_80px_rgba(255,46,136,0.6)]">
-              <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-base uppercase tracking-[0.3em] text-[#ff2e88] mb-1">
+            <div className="relative flex flex-col items-center px-8 py-6 rounded-2xl bg-[#07060a]/90 border-2 border-vice-pink shadow-[0_0_80px_rgba(255,46,136,0.6)]">
+              <span className="font-['Barlow_Condensed'] font-bold text-sm sm:text-base uppercase tracking-[0.3em] text-vice-pink mb-1">
                 PORTFOLIO CLEARED
               </span>
               <h1
@@ -170,7 +170,7 @@ export const MissionPassed: React.FC = () => {
               </h1>
               <div className="flex items-center gap-6 mt-4 font-['Barlow_Condensed'] font-bold text-lg sm:text-2xl uppercase tracking-widest">
                 <span className="text-white drop-shadow">MAX RESPECT</span>
-                <span className="text-[#ff2e88]">★ ★ ★ ★ ★</span>
+                <span className="text-vice-pink">★ ★ ★ ★ ★</span>
                 <span className="text-[#5fd068] drop-shadow">+$1,000</span>
               </div>
             </div>

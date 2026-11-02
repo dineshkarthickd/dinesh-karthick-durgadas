@@ -13,7 +13,6 @@ import { BackgroundStage } from './ui/BackgroundStage';
 import { Boot } from './screens/Boot';
 import { getActiveLayer } from './lib/inputLayer';
 import { playSelectSound, playBackSound } from './lib/sfx';
-import { haptic } from './lib/feedback';
 
 // Lazy-load overlays & route screens to keep entry chunk small (<300 KB)
 const Loadout = lazy(() => import('./ui/Loadout').then((m) => ({ default: m.Loadout })));
@@ -103,28 +102,6 @@ const AppContent: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Tab') {
-        const activeLayer = getActiveLayer();
-        if (activeLayer === 'certViewer' || activeLayer === 'briefing') return;
-        if (
-          e.target instanceof HTMLInputElement ||
-          e.target instanceof HTMLTextAreaElement ||
-          (e.target instanceof HTMLElement && e.target.isContentEditable)
-        ) {
-          return;
-        }
-        e.preventDefault();
-        haptic(10);
-        if (loadoutOpenRef.current) {
-          playBackSound();
-          setLoadoutOpen(false);
-        } else {
-          playSelectSound();
-          setLoadoutOpen(true);
-        }
-        return;
-      }
-
       if (e.key === 'q' || e.key === 'Q') {
         if (e.repeat) return;
         const activeLayer = getActiveLayer();
