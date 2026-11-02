@@ -7,6 +7,7 @@ import { activeLoadoutSelectionRef } from './lib/loadoutSelection';
 import { Hud } from './hud/Hud';
 import { AreaName } from './ui/AreaName';
 import { MissionPassed } from './ui/MissionPassed';
+import { RouteMetadata } from './ui/RouteMetadata';
 import { EquippedToast } from './ui/EquippedToast';
 import { AriaAnnouncer } from './ui/AriaAnnouncer';
 import { ClickPulse } from './ui/ClickPulse';
@@ -43,6 +44,7 @@ const MainLayout: React.FC = () => {
       <Hud />
 
       {/* Dynamic Popups & Overlays */}
+      <RouteMetadata />
       <AreaName />
       <MissionPassed />
       <Suspense fallback={null}>

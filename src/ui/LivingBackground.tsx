@@ -24,10 +24,23 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
   style,
 }) => {
   const [canRenderVideo, setCanRenderVideo] = useState<boolean>(false);
-  const [videoLoaded, setVideoLoaded] = useState<boolean>(false);
+  const [loadedArtKey, setLoadedArtKey] = useState<string | null>(null);
+  const [failedArtKey, setFailedArtKey] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const isIntersectingRef = useRef<boolean>(true);
+
+  const videoLoaded = loadedArtKey === artKey;
+  const videoFailed = failedArtKey === artKey;
+
+  // Safety net: if video hasn't reached canplay within 6s, fail safely to still image
+  useEffect(() => {
+    if (!canRenderVideo || videoLoaded || videoFailed) return;
+    const timer = setTimeout(() => {
+      setFailedArtKey(artKey);
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, [canRenderVideo, videoLoaded, videoFailed, artKey]);
 
   // Check manifest & network conditions
   useEffect(() => {
@@ -50,7 +63,7 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
   // Handle active playback, visibility change, and intersection
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || videoFailed) return;
 
     if (!isActive) {
       video.pause();
@@ -96,13 +109,18 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
       document.removeEventListener('visibilitychange', handleVisibility);
       if (observer) observer.disconnect();
     };
-  }, [isActive, canRenderVideo]);
+  }, [isActive, canRenderVideo, videoFailed]);
 
-  const handleCanPlayThrough = () => {
-    setVideoLoaded(true);
+  const handleCanPlay = () => {
+    if (videoFailed) return;
+    setLoadedArtKey(artKey);
     if (isActive && videoRef.current && isIntersectingRef.current) {
       videoRef.current.play().catch(() => {});
     }
+  };
+
+  const handleVideoFailure = () => {
+    setFailedArtKey(artKey);
   };
 
   const isDesktop = useIsDesktop();
@@ -125,7 +143,7 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
       />
 
       {/* 2. Poster layer under video (exact matching 720p frame so video fades in seamlessly without softening 4K) */}
-      {canRenderVideo && (
+      {canRenderVideo && !videoFailed && (
         <img
           src={`/art/video/${artKey}-poster.webp`}
           alt=""
@@ -137,8 +155,8 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
         />
       )}
 
-      {/* 3. Living Video Layer (WebM + MP4 fallback) */}
-      {canRenderVideo && (
+      {/* 3. Living Video Layer (MP4 first for Safari/iOS compatibility, then WebM) */}
+      {canRenderVideo && !videoFailed && (
         <video
           ref={videoRef}
           muted
@@ -148,15 +166,18 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
           preload="metadata"
           disablePictureInPicture
           poster={`/art/video/${artKey}-poster.webp`}
-          onCanPlayThrough={handleCanPlayThrough}
+          onCanPlay={handleCanPlay}
+          onCanPlayThrough={handleCanPlay}
+          onError={handleVideoFailure}
+          onStalled={handleVideoFailure}
           className={`${className} absolute inset-0 transition-opacity duration-600`}
           style={{
             objectPosition: `${focusX} ${focusY}`,
             opacity: videoLoaded ? 1 : 0,
           }}
         >
-          <source src={`/art/video/${artKey}.webm`} type="video/webm" />
           <source src={`/art/video/${artKey}.mp4`} type="video/mp4" />
+          <source src={`/art/video/${artKey}.webm`} type="video/webm" />
         </video>
       )}
     </div>
