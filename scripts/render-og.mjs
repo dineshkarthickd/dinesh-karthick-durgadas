@@ -83,7 +83,7 @@ async function renderOg() {
           font-size="22"
           fill="#ff2e88"
           letter-spacing="4">
-          PORTFOLIO · VICE CITY EDITION
+          PORTFOLIO · GAME EDITION
         </text>
 
         <!-- Main Title: DINESH KARTHICK -->

@@ -33,15 +33,6 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
   const videoLoaded = loadedArtKey === artKey;
   const videoFailed = failedArtKey === artKey;
 
-  // Safety net: if video hasn't reached canplay within 6s, fail safely to still image
-  useEffect(() => {
-    if (!canRenderVideo || videoLoaded || videoFailed) return;
-    const timer = setTimeout(() => {
-      setFailedArtKey(artKey);
-    }, 6000);
-    return () => clearTimeout(timer);
-  }, [canRenderVideo, videoLoaded, videoFailed, artKey]);
-
   // Check manifest & network conditions
   useEffect(() => {
     let active = true;
@@ -169,7 +160,6 @@ export const LivingBackground: React.FC<LivingBackgroundProps> = ({
           onCanPlay={handleCanPlay}
           onCanPlayThrough={handleCanPlay}
           onError={handleVideoFailure}
-          onStalled={handleVideoFailure}
           className={`${className} absolute inset-0 transition-opacity duration-600`}
           style={{
             objectPosition: `${focusX} ${focusY}`,
