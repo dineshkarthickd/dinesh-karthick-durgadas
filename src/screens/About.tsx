@@ -27,7 +27,7 @@ export const About: React.FC = () => {
   return (
     <ScreenShell
       artSrc="/art/about.webp"
-      artAlt="Illustration of Dinesh Karthick in Vice City looking towards the beach"
+      artAlt="Illustration of Dinesh Karthick at a sunny beachfront, looking towards the sea"
       title="ABOUT"
       subtitle="Me"
       accentColor={ACCENT}

@@ -1,12 +1,12 @@
-# Dinesh Karthick — GTA Vice City-Themed Interactive Portfolio
+# Dinesh Karthick — Game-Style Interactive Portfolio
 
-An interactive, responsive developer portfolio inspired by GTA Vice City's neon aesthetic and gameplay UI. Built with React 19, TypeScript, Vite, Tailwind CSS v4, and Motion.
+An interactive, responsive developer portfolio inspired by retro open-world game menus and neon 80s aesthetics. Built with React 19, TypeScript, Vite, Tailwind CSS v4, and Motion.
 
 ## Features
 
-- **GTA Gameplay HUD**: Minimap, star wanted rating, live Colombo/Kolkata clock, respect score/money tracker, and interactive DK FM 104.9 radio player.
+- **Game HUD**: Minimap, star wanted rating, live India (IST) clock, respect score/money tracker, and interactive DK FM 104.9 radio player.
 - **Weapon-Wheel Loadout**: 9 skill trees arranged on an interactive weapon wheel with mouse-aim and keyboard hotkeys.
-- **GTA Announcement Certificate Viewer**: Protected in-game trophy modal with custom watermark, zoom, and anti-copy deterrents.
+- **Trophy-Style Certificate Viewer**: Protected in-game trophy modal with custom watermark, zoom, and anti-copy deterrents.
 - **Living Backgrounds**: Seamless cinemagraph loop videos and WebP fallbacks with smooth cross-dissolve transitions.
 - **Responsive Layout**: Dedicated desktop arcade frame for wide screens (≥1024px landscape) and native touch-scrolling stacked layout for mobile & tablet viewports.
 

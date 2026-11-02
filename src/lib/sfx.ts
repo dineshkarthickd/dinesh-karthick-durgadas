@@ -1,5 +1,5 @@
 /**
- * Web Audio API retro-synth sound effects (Vice City style).
+ * Web Audio API retro-synth sound effects (retro neon style).
  * Pure synthesis in code — zero external audio files and zero copyrighted samples.
  */
 

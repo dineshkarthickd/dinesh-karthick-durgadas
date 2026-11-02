@@ -6,7 +6,7 @@ export const ROUTES = [
     accent: 'var(--color-vice-pink)',
     artKey: 'menu',
     stillSrc: '/art/menu.webp',
-    alt: 'Illustration of Dinesh Karthick in a Vice City style background',
+    alt: 'Illustration of Dinesh Karthick in a neon retro-city style background',
     area: { name: 'SUNSET BOULEVARD', district: 'Vice Beach' },
     focus: { x: '76%', y: '10%' },
     menuBadge: 'MISSION 00 · START GAME',

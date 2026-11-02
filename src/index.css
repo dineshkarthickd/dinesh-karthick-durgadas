@@ -247,7 +247,7 @@ body {
   }
 }
 
-/* Custom Vice City Cursor (real mice/trackpads only; native on touch & high-contrast) */
+/* Custom retro neon Cursor (real mice/trackpads only; native on touch & high-contrast) */
 @media (hover: hover) and (pointer: fine) {
   html, body, * {
     cursor: url('/cursor/arrow.svg') 2 2, url('/cursor/arrow-32.png') 2 2, auto;
