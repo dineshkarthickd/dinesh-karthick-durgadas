@@ -8,7 +8,6 @@ const __dirname = path.dirname(__filename);
 const siteDir = path.resolve(__dirname, '..');
 
 const cursorDir = path.resolve(siteDir, 'public/cursor');
-const dataDir = path.resolve(siteDir, 'src/data');
 
 const arrowSvg = path.join(cursorDir, 'arrow.svg');
 const hoverSvg = path.join(cursorDir, 'arrow-hover.svg');
@@ -47,18 +46,11 @@ async function run() {
   fs.writeFileSync(path.join(cursorDir, 'arrow-hover-32.png'), hover32);
   fs.writeFileSync(path.join(cursorDir, 'arrow-hover-64.png'), hover64);
 
-  // Hotspot = (2, 2)
-  const hotspot = { x: 2, y: 2 };
-  const hotspotPath = path.join(dataDir, 'cursor.json');
-  fs.writeFileSync(hotspotPath, JSON.stringify(hotspot, null, 2), 'utf8');
-
   console.log('\n--- Generated Cursor PNG Files ---');
   console.log('arrow-32.png:       ', (arrow32.length / 1024).toFixed(2), 'KB');
   console.log('arrow-64.png:       ', (arrow64.length / 1024).toFixed(2), 'KB');
   console.log('arrow-hover-32.png: ', (hover32.length / 1024).toFixed(2), 'KB');
   console.log('arrow-hover-64.png: ', (hover64.length / 1024).toFixed(2), 'KB');
-  console.log('Hotspot:            ', hotspot);
-  console.log(`Saved hotspot to ${hotspotPath}`);
 }
 
 run().catch((err) => {
