@@ -28,7 +28,7 @@ export const Skills: React.FC = () => {
       sectionId="skills"
     >
       {/* 9 Stat Rows with layout animation so siblings slide smoothly */}
-      <motion.div layout className="flex flex-col gap-2.5 lg:gap-2">
+      <motion.div layout className="flex flex-col gap-2.5 lg:gap-[0.5rem]">
         {skills.map((skill, index) => {
           const isExpanded = expandedIndex === index;
 
@@ -38,21 +38,21 @@ export const Skills: React.FC = () => {
               type="button"
               key={skill.tree}
               onClick={() => toggleRow(index)}
-              className={`text-left w-full p-[var(--m-card-pad)] lg:px-3 ${
-                isExpanded ? 'lg:py-2.5' : 'lg:h-[40px] lg:py-2'
+              className={`text-left w-full p-[var(--m-card-pad)] lg:px-[0.75rem] ${
+                isExpanded ? 'lg:py-[0.625rem]' : 'lg:h-[2.5rem] lg:py-[0.5rem]'
               } flex flex-col justify-center rounded-lg bg-[rgba(10,10,14,0.78)] backdrop-blur-md border transition-all shadow-[0_4px_16px_rgba(0,0,0,0.3)] ${
                 isExpanded
                   ? 'border-[#38d6ff]/60 shadow-[0_4px_20px_rgba(56,214,255,0.25)]'
                   : 'border-white/10 hover:border-white/25'
               }`}
             >
-              {/* Row Header: Name, Progress Bar, Percentage, Chevron (40px tall, 14px labels, bar 6px on desktop) */}
+              {/* Row Header: Name, Progress Bar, Percentage, Chevron */}
               <div className="flex items-center gap-2.5 sm:gap-3">
-                <span className="font-['Barlow_Condensed'] font-semibold card-title-mobile lg:text-[14px] uppercase tracking-wider text-white w-28 sm:w-32 lg:w-28 shrink-0 truncate">
+                <span className="font-['Barlow_Condensed'] font-semibold card-title-mobile lg:text-[0.875rem] uppercase tracking-wider text-white w-28 sm:w-32 lg:w-[7rem] shrink-0 truncate">
                   {skill.tree}
                 </span>
 
-                <div className="flex-1 h-2 lg:h-[6px] bg-neutral-900 rounded-full overflow-hidden border border-white/10">
+                <div className="flex-1 h-2 lg:h-[0.375rem] bg-neutral-900 rounded-full overflow-hidden border border-white/10">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${skill.level}%` }}
@@ -65,13 +65,13 @@ export const Skills: React.FC = () => {
                   />
                 </div>
 
-                <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[13px] text-[#38d6ff] w-8 text-right shrink-0">
+                <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.8125rem] text-[#38d6ff] w-8 lg:w-[2rem] text-right shrink-0">
                   {skill.level}%
                 </span>
 
                 <ChevronDown
                   size={16}
-                  className={`text-[#b9b4ab] transition-transform duration-200 shrink-0 ${
+                  className={`text-[#b9b4ab] transition-transform duration-200 shrink-0 w-4 h-4 lg:w-[1rem] lg:h-[1rem] ${
                     isExpanded ? 'rotate-180 text-[#38d6ff]' : ''
                   }`}
                 />
@@ -109,7 +109,7 @@ export const Skills: React.FC = () => {
                           initial={{ opacity: 0, y: 4 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: i * 0.03, duration: 0.2 }}
-                          className="px-2 py-0.5 rounded-full bg-[#38d6ff]/10 border border-[#38d6ff]/40 text-[11px] font-['Barlow_Condensed'] font-medium text-white tracking-wide"
+                          className="px-2 py-0.5 lg:px-[0.625rem] lg:py-[0.25rem] rounded-full bg-[#38d6ff]/10 border border-[#38d6ff]/40 text-[11px] lg:text-[0.75rem] font-['Barlow_Condensed'] font-medium text-white tracking-wide"
                         >
                           {tool}
                         </motion.span>
@@ -124,8 +124,8 @@ export const Skills: React.FC = () => {
       </motion.div>
 
       {/* Small Hint */}
-      <p className="font-['Barlow_Condensed'] font-bold uppercase tracking-widest text-xs text-[#b9b4ab] mt-1 flex items-center gap-1.5">
-        <span className="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-white text-[10px]">
+      <p className="font-['Barlow_Condensed'] font-bold uppercase tracking-widest text-xs lg:text-[0.75rem] text-[#b9b4ab] mt-1 flex items-center gap-1.5">
+        <span className="px-1.5 py-0.5 rounded bg-white/10 border border-white/20 text-white text-[10px] lg:text-[0.6875rem]">
           Q
         </span>
         PRESS Q TO OPEN YOUR LOADOUT WHEEL

@@ -19,8 +19,8 @@ export const AreaName: React.FC = () => {
       className="hidden lg:block fixed z-30 pointer-events-none select-none text-left"
       style={{
         bottom: 'calc(var(--gutter-y) + 40px)',
-        left: 'calc(var(--frame-x) + min(34vw, 540px) + 32px)',
-        maxWidth: 'calc(100vw - (var(--frame-x) + min(34vw, 540px) + 32px) - 170px)',
+        left: 'calc(var(--frame-x) + var(--panel-width, min(34vw, 34rem)) + 40px)',
+        maxWidth: 'calc(100vw - (var(--frame-x) + var(--panel-width, min(34vw, 34rem)) + 40px) - 170px)',
       }}
     >
       <motion.div

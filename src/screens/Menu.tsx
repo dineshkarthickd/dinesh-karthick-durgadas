@@ -124,7 +124,7 @@ export const Menu: React.FC = () => {
               transition={{ duration: 0.25, ease: 'easeOut' }}
               className="flex flex-col justify-center select-none pointer-events-auto"
               style={{
-                width: 'var(--d-menu-w, clamp(280px, 22vw, 440px))',
+                width: 'clamp(20rem, 24vw, 34rem)',
               }}
             >
               {/* Name & Tagline */}
@@ -148,7 +148,7 @@ export const Menu: React.FC = () => {
               </p>
 
               {/* Menu items list */}
-              <nav aria-label="Main menu" className="flex flex-col gap-1.5 2xl:gap-2 w-full">
+              <nav aria-label="Main menu" className="flex flex-col gap-[0.5rem] w-full">
                 {MENU_ITEMS.map((item, index) => {
                   const isSelected = selectedIndex === index;
                   const isTransitioning = transitioningIndex === index;
@@ -168,7 +168,7 @@ export const Menu: React.FC = () => {
                       }}
                       onMouseEnter={() => handleHighlight(index)}
                       onClick={() => handleSelectItem(index)}
-                      className={`group relative flex items-center justify-between rounded text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
+                      className={`group relative flex items-center justify-between rounded text-left transition-colors px-[1rem] py-[0.625rem] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/80 ${
                         isSelected
                           ? 'text-white'
                           : 'text-[#f2efe9]/80 hover:text-white bg-black/40 border border-white/5'
@@ -177,25 +177,23 @@ export const Menu: React.FC = () => {
                         backgroundColor: isSelected ? barBgColor : undefined,
                         boxShadow: isSelected ? `0 0 20px ${barBgColor}60` : undefined,
                         transform: 'skewX(-6deg)',
-                        padding: 'var(--d-menu-row-py, 10px) var(--d-menu-row-px, 14px)',
                       }}
                     >
                       <div
-                        className="flex items-center gap-2.5 min-w-0"
+                        className="flex items-center gap-[0.625rem] min-w-0"
                         style={{ transform: 'skewX(6deg)' }}
                       >
                         <ItemIcon
-                          size={16}
-                          className={isSelected ? 'text-white' : 'text-[#b9b4ab]'}
+                          size={18}
+                          className={`shrink-0 w-[1.125rem] h-[1.125rem] ${
+                            isSelected ? 'text-white' : 'text-[#b9b4ab]'
+                          }`}
                           style={{
                             color: isSelected ? '#ffffff' : item.accent,
-                            width: 'var(--d-menu-icon, 16px)',
-                            height: 'var(--d-menu-icon, 16px)',
                           }}
                         />
                         <span
-                          className="font-['Barlow_Condensed'] font-bold text-lg uppercase tracking-wider truncate"
-                          style={{ fontSize: 'var(--d-menu-row-text, 18px)' }}
+                          className="font-['Barlow_Condensed'] font-bold text-[1.1875rem] uppercase tracking-wider truncate"
                         >
                           {item.label}
                         </span>
@@ -206,9 +204,9 @@ export const Menu: React.FC = () => {
                         style={{ transform: 'skewX(6deg)' }}
                       >
                         {isVisited && (
-                          <span className="text-[#5fd068] font-bold text-xs drop-shadow">✓</span>
+                          <span className="text-[#5fd068] font-bold text-[0.875rem] drop-shadow">✓</span>
                         )}
-                        <span className="font-['Barlow_Condensed'] font-bold text-sm opacity-60 group-hover:opacity-100">
+                        <span className="font-['Barlow_Condensed'] font-bold text-[1rem] opacity-60 group-hover:opacity-100">
                           ›
                         </span>
                       </div>

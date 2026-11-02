@@ -29,7 +29,7 @@ export const MenuPreviewCard: React.FC<MenuPreviewCardProps> = ({
           className="p-5 rounded-r-xl bg-[rgba(10,10,14,0.76)] backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)] flex flex-col gap-3 select-none"
           style={{
             borderLeft: `4px solid ${selectedItem.accent}`,
-            width: 'var(--d-preview-w, clamp(300px, 24vw, 420px))',
+            width: 'clamp(21rem, 25vw, 32rem)',
           }}
         >
           <div className="flex items-center justify-between gap-2">

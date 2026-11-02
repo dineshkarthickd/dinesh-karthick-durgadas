@@ -43,26 +43,26 @@ export const Contact: React.FC = () => {
       sectionId="contact"
     >
       <div className="@container">
-        <div className="grid grid-cols-1 @[420px]:grid-cols-2 gap-2.5 lg:gap-2">
+        <div className="grid grid-cols-1 @[420px]:grid-cols-2 gap-2.5 lg:gap-[0.625rem]">
           {/* EMAIL (spans full 2 columns, never truncated) */}
           <a
             href={`mailto:${contact.email}`}
             title={contact.email}
             aria-label={`Email ${contact.email}`}
-            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group col-span-1 @[420px]:col-span-2"
+            className="p-[var(--m-card-pad)] lg:p-[0.75rem_1rem] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-[0.625rem] group col-span-1 @[420px]:col-span-2"
             style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
             <div
-              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[2.25rem] lg:h-[2.25rem] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[1.125rem] lg:[&>svg]:h-[1.125rem]"
               style={{ backgroundColor: ACCENT }}
             >
               <Mail size={16} />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.8125rem] uppercase tracking-wider text-white">
                 EMAIL
               </span>
-              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] whitespace-nowrap group-hover:text-white transition-colors">
+              <span className="font-['Inter'] card-text-mobile lg:text-[0.875rem] text-[#b9b4ab] whitespace-nowrap group-hover:text-white transition-colors">
                 {contact.email}
               </span>
             </div>
@@ -75,20 +75,20 @@ export const Contact: React.FC = () => {
             rel="noopener noreferrer"
             title="Chat on WhatsApp"
             aria-label="Chat on WhatsApp"
-            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            className="p-[var(--m-card-pad)] lg:p-[0.75rem_1rem] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-[0.625rem] group"
             style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
             <div
-              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[2.25rem] lg:h-[2.25rem] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[1.125rem] lg:[&>svg]:h-[1.125rem]"
               style={{ backgroundColor: ACCENT }}
             >
               <MessageCircle size={16} />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.8125rem] uppercase tracking-wider text-white">
                 WHATSAPP
               </span>
-              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+              <span className="font-['Inter'] card-text-mobile lg:text-[0.875rem] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
                 Chat on WhatsApp
               </span>
             </div>
@@ -99,20 +99,20 @@ export const Contact: React.FC = () => {
             href={contact.phoneTel}
             title="Call me"
             aria-label="Call Dinesh Karthick"
-            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            className="p-[var(--m-card-pad)] lg:p-[0.75rem_1rem] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-[0.625rem] group"
             style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
             <div
-              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[2.25rem] lg:h-[2.25rem] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[1.125rem] lg:[&>svg]:h-[1.125rem]"
               style={{ backgroundColor: ACCENT }}
             >
               <Phone size={18} />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.8125rem] uppercase tracking-wider text-white">
                 CALL
               </span>
-              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+              <span className="font-['Inter'] card-text-mobile lg:text-[0.875rem] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
                 Call me
               </span>
             </div>
@@ -125,20 +125,20 @@ export const Contact: React.FC = () => {
             rel="noopener noreferrer"
             title="dinesh-karthick-durgadas"
             aria-label="LinkedIn: dinesh-karthick-durgadas"
-            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            className="p-[var(--m-card-pad)] lg:p-[0.75rem_1rem] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-[0.625rem] group"
             style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
             <div
-              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[2.25rem] lg:h-[2.25rem] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[1.125rem] lg:[&>svg]:h-[1.125rem]"
               style={{ backgroundColor: ACCENT }}
             >
               <LinkedinIcon size={18} />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.8125rem] uppercase tracking-wider text-white">
                 LINKEDIN
               </span>
-              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+              <span className="font-['Inter'] card-text-mobile lg:text-[0.875rem] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
                 dinesh-karthick-durgadas
               </span>
             </div>
@@ -151,20 +151,20 @@ export const Contact: React.FC = () => {
             rel="noopener noreferrer"
             title="dineshkarthickd"
             aria-label="GitHub: dineshkarthickd"
-            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            className="p-[var(--m-card-pad)] lg:p-[0.75rem_1rem] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-[0.625rem] group"
             style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
             <div
-              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[2.25rem] lg:h-[2.25rem] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[1.125rem] lg:[&>svg]:h-[1.125rem]"
               style={{ backgroundColor: ACCENT }}
             >
               <GithubIcon size={18} />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.8125rem] uppercase tracking-wider text-white">
                 GITHUB
               </span>
-              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+              <span className="font-['Inter'] card-text-mobile lg:text-[0.875rem] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
                 dineshkarthickd
               </span>
             </div>
@@ -177,20 +177,20 @@ export const Contact: React.FC = () => {
             rel="noopener noreferrer"
             title="@dinesh.durgadas"
             aria-label="Instagram: @dinesh.durgadas"
-            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-2.5 group"
+            className="p-[var(--m-card-pad)] lg:p-[0.75rem_1rem] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 hover:border-white/30 transition-all hover:translate-x-1 flex items-center gap-[0.625rem] group"
             style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
             <div
-              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[2.25rem] lg:h-[2.25rem] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[1.125rem] lg:[&>svg]:h-[1.125rem]"
               style={{ backgroundColor: ACCENT }}
             >
               <InstagramIcon size={18} />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.8125rem] uppercase tracking-wider text-white">
                 INSTAGRAM
               </span>
-              <span className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
+              <span className="font-['Inter'] card-text-mobile lg:text-[0.875rem] text-[#b9b4ab] truncate group-hover:text-white transition-colors">
                 @dinesh.durgadas
               </span>
             </div>
@@ -198,22 +198,22 @@ export const Contact: React.FC = () => {
 
           {/* LOCATION (not a link) */}
           <div
-            className="p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 flex items-center gap-2.5 @[420px]:col-span-2"
+            className="p-[var(--m-card-pad)] lg:p-[0.75rem_1rem] rounded-r-lg bg-[rgba(10,10,14,0.75)] backdrop-blur-md border border-white/10 flex items-center gap-[0.625rem] @[420px]:col-span-2"
             style={{ borderLeft: `4px solid ${ACCENT}` }}
           >
             <div
-              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,30px)] lg:h-[var(--d-card-icon,30px)] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-4 lg:[&>svg]:h-4"
+              className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[2.25rem] lg:h-[2.25rem] rounded flex items-center justify-center shrink-0 text-black shadow-md [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[1.125rem] lg:[&>svg]:h-[1.125rem]"
               style={{ backgroundColor: ACCENT }}
             >
               <MapPin size={18} />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,11.5px)] uppercase tracking-wider text-white">
+              <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.8125rem] uppercase tracking-wider text-white">
                 LOCATION
               </span>
               <span
                 title={contact.location}
-                className="font-['Inter'] card-text-mobile lg:text-[var(--d-card-text,12.5px)] text-[#b9b4ab] truncate"
+                className="font-['Inter'] card-text-mobile lg:text-[0.875rem] text-[#b9b4ab] truncate"
               >
                 {contact.location}
               </span>

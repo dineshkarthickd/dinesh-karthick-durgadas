@@ -147,8 +147,8 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
             style={{
               left: 'var(--frame-x)',
               top: 'max(calc(56px + 24px), var(--gutter-y))',
-              bottom: 'calc(var(--gutter-y) + 48px)',
-              width: 'var(--panel-width, min(34vw, 540px))',
+              bottom: 'calc(var(--gutter-y) + 3rem)',
+              width: 'var(--panel-width, min(34vw, 34rem))',
             }}
           >
             <motion.div
@@ -223,7 +223,7 @@ export const ScreenShell: React.FC<ScreenShellProps> = ({
               style={{
                 bottom: 'var(--gutter-y)',
                 left: 'var(--frame-x)',
-                width: 'var(--panel-width, min(34vw, 540px))',
+                width: 'var(--panel-width, min(34vw, 34rem))',
               }}
             >
               <div className="flex items-center gap-4">

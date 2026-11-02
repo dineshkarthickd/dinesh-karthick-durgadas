@@ -158,7 +158,7 @@ export const Achievements: React.FC = () => {
                           setActiveTab(tab);
                         }
                       }}
-                      className={`px-3 2xl:px-4 h-[30px] 2xl:h-[36px] flex items-center justify-center rounded font-['Barlow_Condensed'] font-bold text-xs 2xl:text-sm uppercase tracking-wider transition-all ${
+                      className={`px-3 lg:px-[0.875rem] h-[30px] lg:h-[2.125rem] flex items-center justify-center rounded font-['Barlow_Condensed'] font-bold text-xs lg:text-[0.8125rem] uppercase tracking-wider transition-all ${
                         isActive
                           ? 'bg-[#e64bff] text-white shadow-[0_2px_10px_rgba(230,75,255,0.4)]'
                           : 'bg-white/5 text-[#b9b4ab] hover:bg-white/10 hover:text-white'
@@ -190,7 +190,7 @@ export const Achievements: React.FC = () => {
           {/* Certificates List */}
           <div
             ref={achievementsListRef}
-            className="space-y-2 lg:space-y-1.5 my-1 py-1 pr-1 lg:flex-1 lg:min-h-0 lg:overflow-y-auto overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden lg:[mask-image:linear-gradient(to_bottom,transparent,black_14px,black_calc(100%-14px),transparent)] lg:[-webkit-mask-image:linear-gradient(to_bottom,transparent,black_14px,black_calc(100%-14px),transparent)]"
+            className="space-y-2 lg:space-y-[0.5rem] my-1 py-1 pr-1 lg:flex-1 lg:min-h-0 lg:overflow-y-auto overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden lg:[mask-image:linear-gradient(to_bottom,transparent,black_14px,black_calc(100%-14px),transparent)] lg:[-webkit-mask-image:linear-gradient(to_bottom,transparent,black_14px,black_calc(100%-14px),transparent)]"
           >
             {filteredCerts.map((cert) => {
               const tierInfo = TIER_COLORS[cert.tier];
@@ -199,7 +199,7 @@ export const Achievements: React.FC = () => {
               return (
                 <div
                   key={cert.preview}
-                  className={`p-[var(--m-card-pad)] lg:p-[var(--d-card-pad,10px_12px)] rounded-lg border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 lg:gap-2.5 ${
+                  className={`p-[var(--m-card-pad)] lg:p-[0.75rem_1rem] rounded-lg border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 lg:gap-[0.625rem] ${
                     isMatch
                       ? 'bg-[#38d6ff]/10 border-[#38d6ff]/40 shadow-[0_0_15px_rgba(56,214,255,0.15)]'
                       : 'bg-[#0a0a0e]/90 border-white/10 hover:border-white/20'
@@ -208,7 +208,7 @@ export const Achievements: React.FC = () => {
                   {/* Left: Icon + Info */}
                   <div className="flex items-start gap-3 min-w-0">
                     <div
-                      className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[var(--d-card-icon,32px)] lg:h-[var(--d-card-icon,32px)] rounded flex items-center justify-center shrink-0 text-base shadow [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[calc(var(--d-card-icon,32px)*0.5)] lg:[&>svg]:h-[calc(var(--d-card-icon,32px)*0.5)]"
+                      className="w-[var(--m-card-icon-box)] h-[var(--m-card-icon-box)] lg:w-[2.25rem] lg:h-[2.25rem] rounded flex items-center justify-center shrink-0 text-base shadow [&>svg]:w-[var(--m-card-icon-glyph)] [&>svg]:h-[var(--m-card-icon-glyph)] lg:[&>svg]:w-[1.125rem] lg:[&>svg]:h-[1.125rem]"
                       style={{ backgroundColor: tierInfo.bg, color: tierInfo.text }}
                     >
                       <Trophy size={16} />
@@ -216,15 +216,15 @@ export const Achievements: React.FC = () => {
 
                     <div className="flex flex-col min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[var(--d-card-title,12px)] uppercase tracking-wide text-white truncate">
+                        <span className="font-['Barlow_Condensed'] font-bold card-title-mobile lg:text-[0.875rem] uppercase tracking-wide text-white truncate">
                           {cert.title}
                         </span>
                       </div>
 
-                      <div className="card-text-mobile lg:text-[var(--d-card-text,11.5px)] text-[#b9b4ab] mt-0.5 font-['Inter'] leading-tight sm:flex sm:items-center sm:flex-nowrap min-w-0">
+                      <div className="card-text-mobile lg:text-[0.75rem] text-[#b9b4ab] mt-0.5 font-['Inter'] leading-tight sm:flex sm:items-center sm:flex-nowrap min-w-0">
                         <span className="block sm:inline truncate">{cert.issuer}</span>
                         <span className="hidden sm:inline text-white/20 mx-1.5 shrink-0">·</span>
-                        <span className="block sm:inline font-mono text-[11px] lg:text-[calc(var(--d-card-text,11.5px)-0.5px)] text-neutral-300 whitespace-nowrap shrink-0">{cert.date}</span>
+                        <span className="block sm:inline font-mono text-[11px] lg:text-[0.75rem] text-neutral-300 whitespace-nowrap shrink-0">{cert.date}</span>
                       </div>
                     </div>
                   </div>
@@ -237,13 +237,9 @@ export const Achievements: React.FC = () => {
                         const idx = filteredCerts.findIndex((c) => c.preview === cert.preview);
                         setViewerIndex(idx >= 0 ? idx : 0);
                       }}
-                      className="flex items-center gap-1 px-2.5 py-1 rounded bg-white/10 hover:bg-[#e64bff] hover:text-white text-[11px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-neutral-200 transition-colors"
-                      style={{
-                        padding: 'var(--d-btn-pad, 4px 10px)',
-                        fontSize: 'var(--d-btn-text, 11px)',
-                      }}
+                      className="flex items-center gap-1 px-2.5 py-1 lg:px-[0.625rem] lg:py-[0.3125rem] rounded bg-white/10 hover:bg-[#e64bff] hover:text-white text-[11px] lg:text-[0.75rem] font-['Barlow_Condensed'] font-bold uppercase tracking-wider text-neutral-200 transition-colors"
                     >
-                      <FileText size={12} style={{ width: 'var(--d-btn-icon, 12px)', height: 'var(--d-btn-icon, 12px)' }} />
+                      <FileText size={12} className="w-3 h-3 lg:w-[0.875rem] lg:h-[0.875rem]" />
                       VIEW
                     </button>
 
@@ -252,13 +248,9 @@ export const Achievements: React.FC = () => {
                         href={cert.verify}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 px-2.5 py-1 rounded bg-[#5fd068]/20 hover:bg-[#5fd068] text-[#5fd068] hover:text-black text-[11px] font-['Barlow_Condensed'] font-bold uppercase tracking-wider transition-colors border border-[#5fd068]/40"
-                        style={{
-                          padding: 'var(--d-btn-pad, 4px 10px)',
-                          fontSize: 'var(--d-btn-text, 11px)',
-                        }}
+                        className="flex items-center gap-1 px-2.5 py-1 lg:px-[0.625rem] lg:py-[0.3125rem] rounded bg-[#5fd068]/20 hover:bg-[#5fd068] text-[#5fd068] hover:text-black text-[11px] lg:text-[0.75rem] font-['Barlow_Condensed'] font-bold uppercase tracking-wider transition-colors border border-[#5fd068]/40"
                       >
-                        <CheckCircle2 size={12} style={{ width: 'var(--d-btn-icon, 12px)', height: 'var(--d-btn-icon, 12px)' }} />
+                        <CheckCircle2 size={12} className="w-3 h-3 lg:w-[0.875rem] lg:h-[0.875rem]" />
                         VERIFY
                       </a>
                     )}

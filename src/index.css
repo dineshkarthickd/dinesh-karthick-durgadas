@@ -117,13 +117,13 @@
 
 @media (min-width: 1024px) and (orientation: landscape) {
   :root {
-    --panel-width: min(46vw, 540px);
+    --panel-width: min(46vw, 34rem);
   }
 }
 
 @media (min-width: 1280px) and (orientation: landscape) {
   :root {
-    --panel-width: min(34vw, 540px);
+    --panel-width: min(34vw, 34rem);
   }
 }
 
@@ -131,32 +131,19 @@
   :root {
     --frame-max: 2250px;
     --gutter-y: clamp(36px, 4.5vh, 64px);
-    --panel-width: min(36vw, 680px);
-    --d-card-pad: 14px 18px;
-    --d-card-icon: 42px;
-    --d-card-title: 15.5px;
-    --d-card-text: 14.5px;
-    --d-btn-text: 14px;
-    --d-btn-pad: 6px 14px;
-    --d-btn-icon: 15px;
-    --d-menu-w: clamp(360px, 22vw, 560px);
-    --d-preview-w: clamp(380px, 24vw, 540px);
-    --d-menu-row-py: 13px;
-    --d-menu-row-px: 18px;
-    --d-menu-row-text: 22px;
-    --d-menu-icon: 20px;
-    --d-hud-h: 54px;
-    --d-hud-font: 28px;
-    --d-hud-star: 18px;
-    --d-minimap-size: 130px;
-    --d-minimap-b: 32px;
-    --d-minimap-r: 36px;
+    --panel-width: min(34vw, 34rem);
+    --d-hud-h: 3.375rem;
+    --d-hud-font: 1.625rem;
+    --d-hud-star: 1.125rem;
+    --d-minimap-size: 8.125rem;
+    --d-minimap-b: 2rem;
+    --d-minimap-r: 2.25rem;
     --d-title-max: 125px;
     --d-sub-max: 68px;
   }
 
   html {
-    font-size: 125%;
+    font-size: 125% !important;
   }
 }
 

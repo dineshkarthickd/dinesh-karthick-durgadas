@@ -64,21 +64,21 @@ export const MissionPassed: React.FC = () => {
 
   return (
     <>
-      {/* Desktop (lg): Left side below top HUD strip above content panel (never overlaps face at right) */}
+      {/* Desktop (lg): Above the minimap on the bottom-right (never intersects section title, content panel, or face) */}
       <div
         className="hidden lg:block fixed z-40 pointer-events-none select-none"
         style={{
-          top: '58px',
-          left: 'var(--frame-x)',
+          bottom: 'calc(var(--d-minimap-b, 24px) + var(--d-minimap-size, 104px) + 16px)',
+          right: 'var(--d-minimap-r, 28px)',
         }}
       >
         <AnimatePresence>
           {popupActive && (
             <motion.div
-              initial={{ opacity: 0, x: -30, scale: 0.9 }}
+              initial={{ opacity: 0, y: 20, scale: 0.9 }}
               animate={{
                 opacity: 1,
-                x: 0,
+                y: 0,
                 scale: [0.9, 1.03, 1],
                 boxShadow: [
                   '0 8px 30px rgba(0,0,0,0.9)',
@@ -86,17 +86,17 @@ export const MissionPassed: React.FC = () => {
                   '0 0 20px rgba(255,194,61,0.4), 0 8px 30px rgba(0,0,0,0.9)',
                 ],
               }}
-              exit={{ opacity: 0, x: -20, scale: 0.95 }}
+              exit={{ opacity: 0, y: 15, scale: 0.95 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-[#0a0a0e]/95 border-l-4 border-[#ffc23d] px-3.5 py-1.5 2xl:px-4 2xl:py-2 rounded-r-lg shadow-[0_8px_30px_rgba(0,0,0,0.9)] backdrop-blur-md flex items-center gap-3"
+              className="bg-[#0a0a0e]/95 border-r-4 border-[#ffc23d] px-4 py-2.5 2xl:px-5 2xl:py-3 rounded-l-lg shadow-[0_8px_30px_rgba(0,0,0,0.9)] backdrop-blur-md flex flex-col items-end"
             >
-              <span
-                className="font-['Anton'] text-[18px] 2xl:text-[22px] tracking-wide text-[#ffc23d] uppercase leading-none skew-btn"
-                style={{ textShadow: '1px 1px 0 #000' }}
+              <div
+                className="font-['Anton'] text-[22px] 2xl:text-[26px] tracking-wide text-[#ffc23d] uppercase leading-none skew-btn"
+                style={{ textShadow: '2px 2px 0 #000' }}
               >
                 MISSION PASSED
-              </span>
-              <div className="flex items-center gap-2 font-['Barlow_Condensed'] font-bold text-xs 2xl:text-sm tracking-wider uppercase">
+              </div>
+              <div className="flex items-center gap-2.5 mt-1 font-['Barlow_Condensed'] font-bold text-xs 2xl:text-sm tracking-wider uppercase">
                 <span className="text-white drop-shadow">RESPECT +</span>
                 <span className="text-[#5fd068] drop-shadow">+$100</span>
               </div>
