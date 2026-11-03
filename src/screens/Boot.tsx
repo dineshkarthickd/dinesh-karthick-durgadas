@@ -122,23 +122,29 @@ export const Boot: React.FC<BootProps> = ({ onComplete }) => {
       <div />
 
       {/* Center Title & Loading Bar */}
-      <div className="flex flex-col items-center text-center">
+      <div className="flex flex-col items-center text-center my-auto">
         <div className="relative inline-block">
           <h1
-            className="font-['Anton'] text-[48px] sm:text-[76px] md:text-[96px] tracking-tight uppercase leading-none text-[#f2efe9]"
-            style={{ textShadow: '0 4px 16px rgba(0,0,0,0.8)' }}
+            className="font-['Anton'] tracking-tight uppercase leading-none text-[#f2efe9]"
+            style={{
+              fontSize: 'clamp(40px, min(9vh, 7vw), 96px)',
+              textShadow: '0 4px 16px rgba(0,0,0,0.8)',
+            }}
           >
             DINESH KARTHICK
           </h1>
           <span
-            className="font-['Yellowtail'] text-vice-pink text-[34px] sm:text-[52px] -rotate-6 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_12px_rgba(255,46,136,0.6)] whitespace-nowrap"
+            className="font-['Yellowtail'] text-vice-pink -rotate-6 absolute right-[-0.1em] bottom-[-0.35em] drop-shadow-[0_4px_12px_rgba(255,46,136,0.6)] whitespace-nowrap"
+            style={{
+              fontSize: 'clamp(26px, min(5vh, 4vw), 52px)',
+            }}
           >
             Portfolio
           </span>
         </div>
 
         {/* Loading Progress Bar */}
-        <div className="w-64 sm:w-80 h-1.5 bg-white/10 rounded-full mt-10 overflow-hidden relative border border-white/5">
+        <div className="w-64 sm:w-80 h-1.5 bg-white/10 rounded-full mt-[clamp(16px,3.5vh,40px)] overflow-hidden relative border border-white/5">
           <div
             className="h-full bg-gradient-to-r from-vice-pink to-[#ff8a3d] transition-all duration-100 ease-out"
             style={{ width: `${progress}%` }}

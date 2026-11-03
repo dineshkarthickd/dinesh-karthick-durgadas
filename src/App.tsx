@@ -80,6 +80,9 @@ const AppContent: React.FC = () => {
   const { setLoadoutOpen, equipTree } = useGameActions();
   const [booted, setBooted] = useState<boolean>(() => {
     try {
+      if (typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('noboot')) {
+        return true;
+      }
       return sessionStorage.getItem(BOOT_SESSION_KEY) === 'true';
     } catch {
       return false;
